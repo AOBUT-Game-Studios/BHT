@@ -99,6 +99,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkingSpeed: 2
   runningSpeed: 5
+  enableStamina: 1
+  maxStamina: 10
+  staminaLoseMultiplier: 1
+  staminaGainMultiplier: 1
+  staminaSpeed: 1
 --- !u!50 &1557352539457234567
 Rigidbody2D:
   serializedVersion: 4
