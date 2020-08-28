@@ -27,23 +27,41 @@ public class MainControllerScript : MonoBehaviour
     }
     void FixedUpdate() 
     {
+        move();
+    }
+    void move()
+    {
         float horizontal, vertical;
         bool up = Input.GetKey(KeyCode.W);
         bool down = Input.GetKey(KeyCode.S);
         bool left = Input.GetKey(KeyCode.A);
         bool right = Input.GetKey(KeyCode.D);
-        if(right) {
-            horizontal = 1.0f;
-        } else if(left) {
-            horizontal = -1.0f;
-        } else {
+        if (right && left) 
+        {
             horizontal = 0.0f;
         }
-        if(up) {
+        else if(right) 
+        {
+            horizontal = 1.0f;
+        }
+        else if(left)
+        {
+            horizontal = -1.0f;
+        }
+        else
+        {
+            horizontal = 0.0f;
+        }
+        if(up)
+        {
             vertical = 1.0f;
-        } else if(down) {
+        }
+        else if(down)
+        {
             vertical = -1.0f;
-        } else {
+        }
+        else
+        {
             vertical = 0.0f;
         }
         Vector2 position = rb.position;
