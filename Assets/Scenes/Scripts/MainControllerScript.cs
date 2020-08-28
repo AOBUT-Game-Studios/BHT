@@ -15,6 +15,10 @@ public class MainControllerScript : MonoBehaviour
     public int staminaSpeed;
     int staminaTimeout;
     bool staminaDisabled;
+
+    // HP
+    public float maxHP;
+    float HP;
     
     Rigidbody2D rb;
 
@@ -35,6 +39,10 @@ public class MainControllerScript : MonoBehaviour
         staminaSpeed = 1;
         staminaTimeout = 1;
         staminaDisabled = false;
+        
+        // HP stuff
+        maxHP = 10.0f;
+        HP = maxHP;
         rb = GetComponent<Rigidbody2D>();
                 
     }
@@ -147,11 +155,21 @@ public class MainControllerScript : MonoBehaviour
                 Debug.Log("Stamina: " + stamina + "/" + maxStamina + ". Speed: " + speed + "/" + runningSpeed);
             }
         }
-        
+
+        if(staminaDisabled) speed = walkingSpeed;
         Vector2 position = rb.position;
         position.x += Time.deltaTime * speed * horizontal;
         position.y += Time.deltaTime * speed * vertical;
         
         rb.MovePosition(position);
+    }
+
+
+    public void changeHealth(float value) {
+        if(HP + value > 0.0f) {
+            HP = Mathf.Clamp(HP + value, 0, maxHP);
+        } else {
+            // player is dead
+        }
     }
 }
