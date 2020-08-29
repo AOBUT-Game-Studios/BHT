@@ -16,6 +16,12 @@ public class MainControllerScript : MonoBehaviour
     int staminaTimeout;
     bool staminaDisabled;
 
+    // stamina bar
+    UIBar staminaBar;
+    UIBar healthBar;
+
+
+
     // HP
     public float maxHP;
     float HP;
@@ -37,8 +43,10 @@ public class MainControllerScript : MonoBehaviour
         staminaLoseMultiplier = 1.0f;
         staminaGainMultiplier = 1.0f;
         staminaSpeed = 1;
-        staminaTimeout = 1;
+        staminaTimeout = staminaSpeed;
         staminaDisabled = false;
+        staminaBar = GameObject.Find("StaminaBar").GetComponent<UIBar>();
+        healthBar = GameObject.Find("HealthBar").GetComponent<UIBar>();
         
         // HP stuff
         maxHP = 10.0f;
@@ -110,6 +118,7 @@ public class MainControllerScript : MonoBehaviour
         }
 
         // if stamina is enabled
+                changeHealth(-1.0f);
         if(enableStamina)
         {
             // update once a second
@@ -126,7 +135,7 @@ public class MainControllerScript : MonoBehaviour
                         // forced to walk
                         speed = walkingSpeed;
                         stamina = Mathf.Clamp(stamina + staminaGainMultiplier, 0, maxStamina);
-                        Debug.Log("walking and gaining");
+                        // Debug.Log("walking and gaining");
                         staminaDisabled = true;
                     }
                     else 
@@ -135,13 +144,13 @@ public class MainControllerScript : MonoBehaviour
                         {
                             speed = walkingSpeed;
                             stamina = Mathf.Clamp(stamina + staminaGainMultiplier, 0, maxStamina);
-                            Debug.Log("Stamina disabled");
+                            // Debug.Log("Stamina disabled");
                         }
                         else
                         {
                             // run and lose stamina
                             stamina = Mathf.Clamp(stamina - staminaLoseMultiplier, 0, maxStamina);
-                            Debug.Log("running and losing");
+                            // Debug.Log("running and losing");
                             staminaDisabled = false;
                         }
                     }
@@ -149,11 +158,12 @@ public class MainControllerScript : MonoBehaviour
                 else
                 {
                     // walking voluntarily and gaining
-                    Debug.Log("walking voluntarily and gaining");
+                    // Debug.Log("walking voluntarily and gaining");
                     stamina = Mathf.Clamp(stamina + staminaGainMultiplier, 0, maxStamina);
                 }
-                Debug.Log("Stamina: " + stamina + "/" + maxStamina + ". Speed: " + speed + "/" + runningSpeed);
+                // Debug.Log("Stamina: " + stamina + "/" + maxStamina + ". Speed: " + speed + "/" + runningSpeed);
             }
+            staminaBar.setBar(stamina, maxStamina);
         }
 
         if(staminaDisabled) speed = walkingSpeed;
@@ -168,8 +178,11 @@ public class MainControllerScript : MonoBehaviour
     public void changeHealth(float value) {
         if(HP + value > 0.0f) {
             HP = Mathf.Clamp(HP + value, 0, maxHP);
+            healthBar.setBar(HP, maxHP);
         } else {
             // player is dead
+            HP = 0.0f;
+            healthBar.setBar(HP, maxHP);
         }
     }
 }
