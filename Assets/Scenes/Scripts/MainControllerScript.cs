@@ -118,7 +118,6 @@ public class MainControllerScript : MonoBehaviour
         }
 
         // if stamina is enabled
-                changeHealth(-1.0f);
         if(enableStamina)
         {
             // update once a second
