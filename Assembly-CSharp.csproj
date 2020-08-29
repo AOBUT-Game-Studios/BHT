@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scenes\Scripts\UIBar.cs" />
     <Compile Include="Assets\Scenes\Scripts\MainControllerScript.cs" />
+    <Compile Include="Assets\Scenes\Scripts\MinionScript.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
