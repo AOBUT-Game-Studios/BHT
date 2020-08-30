@@ -20,6 +20,9 @@ public class MainControllerScript : MonoBehaviour
     // stamina bar
     UIBar staminaBar, healthBar;
 
+    //Animation
+    Animator animator;
+
 
 
     // HP
@@ -40,6 +43,7 @@ public class MainControllerScript : MonoBehaviour
         // HP stuff
         HP = maxHP;
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         staminaBar.setBar(1.0f, 10.0f);
                 
     }
@@ -49,6 +53,16 @@ public class MainControllerScript : MonoBehaviour
     {
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
+        if(vertical == 0 && horizontal == 0)
+        {
+            animator.SetBool("Walking", false);
+        } else {
+            animator.SetBool("Walking", true);
+        }
+        animator.SetFloat("MoveX", horizontal);
+        animator.SetFloat("MoveY", vertical);
+
+        
     }
     void FixedUpdate() 
     {

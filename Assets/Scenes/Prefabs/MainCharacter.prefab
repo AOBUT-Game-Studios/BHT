@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5081245334483889927}
   - component: {fileID: 1557352539457234567}
   - component: {fileID: 5307285489861777064}
+  - component: {fileID: 5742609059850919017}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4191022214411772912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.851, y: -0.994, z: 0}
-  m_LocalScale: {x: 6.4543676, y: 6.4543676, z: 6.4543676}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,8 +74,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a815de6dac635324a9c071e5d039f77d, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: -8693245365060992946, guid: b4c9095bb197048a48da5dcf99a4bd90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,13 +98,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be618b5150f25541ae68a4fecf5cc0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 2
-  runningSpeed: 5
+  walkingSpeed: 5
+  runningSpeed: 8
   enableStamina: 1
   maxStamina: 10
   staminaLoseMultiplier: 1
   staminaGainMultiplier: 1
   staminaSpeed: 1
+  maxHP: 0
 --- !u!50 &1557352539457234567
 Rigidbody2D:
   serializedVersion: 4
@@ -138,16 +140,35 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.010126829, y: -1.2962003}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1.7984786, y: 0.4010117}
   m_EdgeRadius: 0
+--- !u!95 &5742609059850919017
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4191022214411772912}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4214b2dbd24f1fdd18682f77242dd051, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
