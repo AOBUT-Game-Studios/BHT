@@ -14,13 +14,11 @@ public class UIBar : MonoBehaviour
     {
         rt = GetComponent<RectTransform>();
         rt.anchoredPosition = new Vector2(0.0f, 0.0f);
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
     public void setBar(float value, float maxValue)
     {
