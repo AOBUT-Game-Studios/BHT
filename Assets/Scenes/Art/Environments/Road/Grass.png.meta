@@ -1,127 +1,34 @@
 fileFormatVersion: 2
-guid: 4828e60aa7dddf44dbbf8b8901efd91d
+guid: 6be49fb3738e5564787c961fca094bbe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 741677135119583748
-    second: Candy_Road1_0
+      213: -1347532211411968617
+    second: Grass_0
   - first:
-      213: 5850459826825909554
-    second: Candy_Road1_1
+      213: -7645372005702169758
+    second: Grass_1
   - first:
-      213: 6649236228471363376
-    second: Candy_Road1_2
+      213: 6891631753638271631
+    second: Grass_2
   - first:
-      213: -108058939648896148
-    second: Candy_Road1_3
+      213: 475435623110610922
+    second: Grass_3
   - first:
-      213: -1049919278409009819
-    second: Candy_Road1_4
+      213: 5299400320964040512
+    second: Grass_4
   - first:
-      213: 6155394849028074999
-    second: Candy_Road1_5
+      213: -7255497285719700247
+    second: Grass_5
   - first:
-      213: -1803839191408221460
-    second: Candy_Road1_6
+      213: 6828908663453297030
+    second: Grass_6
   - first:
-      213: 3771880100691915526
-    second: Candy_Road1_7
+      213: 6694032873506494867
+    second: Grass_7
   - first:
-      213: -5676910202465285643
-    second: Candy_Road1_8
-  - first:
-      213: 1745290239507657178
-    second: Candy_Road1_9
-  - first:
-      213: -3759539437870701204
-    second: Candy_Road1_10
-  - first:
-      213: 6183862952857034524
-    second: Candy_Road1_11
-  - first:
-      213: 789108199277917939
-    second: Candy_Road1_12
-  - first:
-      213: -149636232822351785
-    second: Candy_Road1_13
-  - first:
-      213: 287151325371308651
-    second: Candy_Road1_14
-  - first:
-      213: -4633665482834797688
-    second: Candy_Road1_15
-  - first:
-      213: 2618594625166469575
-    second: Candy_Road1_16
-  - first:
-      213: 1708395732888772696
-    second: Candy_Road1_17
-  - first:
-      213: -7453733559090845361
-    second: Candy_Road1_18
-  - first:
-      213: -3445803672662985952
-    second: Candy_Road1_19
-  - first:
-      213: 3097798691717727095
-    second: Candy_Road1_20
-  - first:
-      213: -1265526051699832216
-    second: Candy_Road1_21
-  - first:
-      213: -1618631692469122191
-    second: Candy_Road1_22
-  - first:
-      213: -7954230920875333016
-    second: Candy_Road1_23
-  - first:
-      213: 8627336632940624643
-    second: Candy_Road1_24
-  - first:
-      213: -7851356992933227134
-    second: Candy_Road1_25
-  - first:
-      213: 8988744441260309861
-    second: Candy_Road1_26
-  - first:
-      213: -1094106836295557889
-    second: Candy_Road1_27
-  - first:
-      213: -7476058343825688724
-    second: Candy_Road1_28
-  - first:
-      213: 7161804604519741809
-    second: Candy_Road1_29
-  - first:
-      213: 8229109848513259294
-    second: Candy_Road1_30
-  - first:
-      213: -933624765393645592
-    second: Candy_Road1_31
-  - first:
-      213: -8763878097328823189
-    second: Candy_Road1_32
-  - first:
-      213: 1887211914425014698
-    second: Candy_Road1_33
-  - first:
-      213: -2917023681989655453
-    second: Candy_Road1_34
-  - first:
-      213: -5163619135570371076
-    second: Candy_Road1_35
-  - first:
-      213: -4656168776257188485
-    second: Candy_Road1_36
-  - first:
-      213: -188579303286870550
-    second: Candy_Road1_37
-  - first:
-      213: -4680151746942070963
-    second: Candy_Road1_38
-  - first:
-      213: 8542957653171864365
-    second: Candy_Road1_39
+      213: 2289616372777055746
+    second: Grass_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -152,7 +59,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -166,9 +73,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 87
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -221,12 +128,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Candy_Road1_0
+      name: Grass_0
       rect:
         serializedVersion: 2
         x: 0
         y: 172.66666
-        width: 86.5
+        width: 86.333336
         height: 86.333336
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -235,19 +142,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40a05d0cc67fa4a00800000000000000
-      internalID: 741677135119583748
+      spriteID: 79d946fd79a9c4de0800000000000000
+      internalID: -1347532211411968617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Candy_Road1_1
+      name: Grass_1
       rect:
         serializedVersion: 2
         x: 86
         y: 172.66666
-        width: 86.5
+        width: 86.333336
         height: 86.333336
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -256,19 +163,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 235d6a62732013150800000000000000
-      internalID: 5850459826825909554
+      spriteID: 26b0860faae26e590800000000000000
+      internalID: -7645372005702169758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Candy_Road1_2
+      name: Grass_2
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 172.66666
+        width: 86.333336
+        height: 86.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a5966019ef3af50800000000000000
+      internalID: 6891631753638271631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_3
       rect:
         serializedVersion: 2
         x: 0
         y: 86.666664
-        width: 86.5
+        width: 86.333336
         height: 86.333336
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -277,19 +205,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03791b1ee15d64c50800000000000000
-      internalID: 6649236228471363376
+      spriteID: aef03152e26199600800000000000000
+      internalID: 475435623110610922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Candy_Road1_3
+      name: Grass_4
       rect:
         serializedVersion: 2
         x: 86
         y: 86.666664
-        width: 86.5
+        width: 86.333336
         height: 86.333336
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -298,19 +226,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c631c6787f8108ef0800000000000000
-      internalID: -108058939648896148
+      spriteID: 04717a5b3804b8940800000000000000
+      internalID: 5299400320964040512
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Candy_Road1_4
+      name: Grass_5
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 86.666664
+        width: 86.333336
+        height: 86.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eccddfe8ab4f4b90800000000000000
+      internalID: -7255497285719700247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0.6666641
-        width: 86.5
+        width: 86.333336
         height: 86.333336
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -319,19 +268,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 565b89f9affed61f0800000000000000
-      internalID: -1049919278409009819
+      spriteID: 689a8b09f3825ce50800000000000000
+      internalID: 6828908663453297030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Candy_Road1_5
+      name: Grass_7
       rect:
         serializedVersion: 2
         x: 86
         y: 0.6666641
-        width: 86.5
+        width: 86.333336
         height: 86.333336
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -340,8 +289,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fd6694a00b5c6550800000000000000
-      internalID: 6155394849028074999
+      spriteID: 39954249e6bf5ec50800000000000000
+      internalID: 6694032873506494867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_8
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 0.6666641
+        width: 86.333336
+        height: 86.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2067b4bc5f956cf10800000000000000
+      internalID: 2289616372777055746
       vertices: []
       indices: 
       edges: []
