@@ -18,8 +18,7 @@ public class MainControllerScript : MonoBehaviour
     float horizontal, vertical;
 
     // stamina bar
-    UIBar staminaBar;
-    UIBar healthBar;
+    UIBar staminaBar, healthBar;
 
 
 
@@ -41,6 +40,7 @@ public class MainControllerScript : MonoBehaviour
         // HP stuff
         HP = maxHP;
         rb = GetComponent<Rigidbody2D>();
+        staminaBar.setBar(1.0f, 10.0f);
                 
     }
 
