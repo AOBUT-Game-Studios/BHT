@@ -15,6 +15,7 @@ public class MainControllerScript : MonoBehaviour
     public int staminaSpeed;
     int staminaTimeout;
     bool staminaDisabled;
+    float horizontal, vertical;
 
     // stamina bar
     UIBar staminaBar;
@@ -58,7 +59,8 @@ public class MainControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        vertical = Input.GetAxis("Vertical");
+        horizontal = Input.GetAxis("Horizontal");
     }
     void FixedUpdate() 
     {
@@ -67,46 +69,7 @@ public class MainControllerScript : MonoBehaviour
     void move()
     {
         // movement variables
-        float horizontal, vertical, speed;
-        bool up = Input.GetKey(KeyCode.W);
-        bool down = Input.GetKey(KeyCode.S);
-        bool left = Input.GetKey(KeyCode.A);
-        bool right = Input.GetKey(KeyCode.D);
-        // if pressing left and right at the same time
-        if (right && left) 
-        {
-            horizontal = 0.0f;
-        }
-        else if(right) 
-        {
-            horizontal = 1.0f;
-        }
-        else if(left)
-        {
-            horizontal = -1.0f;
-        }
-        else
-        {
-            horizontal = 0.0f;
-        }
-
-        // if pressing up and down at the same time
-        if(up && down) 
-        {
-            vertical = 0.0f;
-        }
-        if(up)
-        {
-            vertical = 1.0f;
-        }
-        else if(down)
-        {
-            vertical = -1.0f;
-        }
-        else
-        {
-            vertical = 0.0f;
-        }
+        float speed;
 
         // if shift key is pressed
         if(Input.GetKey(KeyCode.LeftShift))
