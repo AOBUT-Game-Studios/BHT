@@ -5,16 +5,16 @@ using UnityEngine;
 public class MainControllerScript : MonoBehaviour
 {
     // movement
-    public float walkingSpeed;
-    public float runningSpeed;
-    public bool enableStamina;
+    public float walkingSpeed = 2.0f;
+    public float runningSpeed = 5.0f;
+    public bool enableStamina = true;
+    public float maxStamina = 10.0f;
     float stamina;
-    public float maxStamina;
-    public float staminaLoseMultiplier;
-    public float staminaGainMultiplier;
-    public int staminaSpeed;
+    public float staminaLoseMultiplier = 1.0f;
+    public float staminaGainMultiplier = 1.0f;
+    public int staminaSpeed = 1;
     int staminaTimeout;
-    bool staminaDisabled;
+    bool staminaDisabled = false;
     float horizontal, vertical;
 
     // stamina bar
@@ -24,7 +24,7 @@ public class MainControllerScript : MonoBehaviour
 
 
     // HP
-    public float maxHP;
+    public float maxHP = 10.0f;
     float HP;
     
     Rigidbody2D rb;
@@ -33,24 +33,12 @@ public class MainControllerScript : MonoBehaviour
 
     void Start()
     {    
-        // movement
-        walkingSpeed = 2.0f;
-        runningSpeed = 5.0f;
-
-        // stamina stuff
-        enableStamina = true;
-        maxStamina = 10.0f;
         stamina = maxStamina;
-        staminaLoseMultiplier = 1.0f;
-        staminaGainMultiplier = 1.0f;
-        staminaSpeed = 1;
         staminaTimeout = staminaSpeed;
-        staminaDisabled = false;
         staminaBar = GameObject.Find("StaminaBar").GetComponent<UIBar>();
         healthBar = GameObject.Find("HealthBar").GetComponent<UIBar>();
         
         // HP stuff
-        maxHP = 10.0f;
         HP = maxHP;
         rb = GetComponent<Rigidbody2D>();
                 
