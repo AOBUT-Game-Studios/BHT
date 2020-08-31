@@ -98,13 +98,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be618b5150f25541ae68a4fecf5cc0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 5
-  runningSpeed: 8
+  walkingSpeed: 2
+  runningSpeed: 5
   enableStamina: 1
   maxStamina: 10
   staminaLoseMultiplier: 1
   staminaGainMultiplier: 1
   staminaSpeed: 1
+  staminaBarObject: {fileID: 0}
+  healthBarObject: {fileID: 0}
   maxHP: 0
 --- !u!50 &1557352539457234567
 Rigidbody2D:

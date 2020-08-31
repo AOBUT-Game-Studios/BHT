@@ -18,6 +18,8 @@ public class MainControllerScript : MonoBehaviour
     float horizontal, vertical;
 
     // stamina bar
+    public GameObject staminaBarObject;
+    public GameObject healthBarObject;
     UIBar staminaBar, healthBar;
 
     //Animation
@@ -37,8 +39,8 @@ public class MainControllerScript : MonoBehaviour
     {    
         stamina = maxStamina;
         staminaTimeout = staminaSpeed;
-        staminaBar = GameObject.Find("StaminaBar").GetComponent<UIBar>();
-        healthBar = GameObject.Find("HealthBar").GetComponent<UIBar>();
+        staminaBar = staminaBarObject.GetComponent<UIBar>();
+        healthBar = healthBarObject.GetComponent<UIBar>();
         
         // HP stuff
         HP = maxHP;
