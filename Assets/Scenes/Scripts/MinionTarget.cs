@@ -6,13 +6,21 @@ using Pathfinding;
 public class MinionTarget : MonoBehaviour
 {
     AIDestinationSetter destination;
-    public GameObject house;
+    public Transform[] houses;
+    public bool hired = false;
+    int houseIndex;
     // Start is called before the first frame update
     void Start()
     {
-        destination = GetComponent<AIDestinationSetter>();
-        destination.target = transform.Find(house.name);
+        destination = GetComponent<AIDestinationSetter>();  
+        houseIndex = Random.Range(0, houses.Length);
 
+        
+        destination.target = houses[houseIndex];
+        if(hired)
+        {
+            
+        }
     }
 
     // Update is called once per frame

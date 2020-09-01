@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class MinionAnimation : MonoBehaviour
 {
-    float horizontal =  GameObject.FindGameObjectWithTag("Minion").transform.position.x, 
-    vertical =  GameObject.FindGameObjectWithTag("Minion").transform.position.y, 
-    prevHorizontal, prevVertical, deltaHorizontal, deltaVertical;
+    float horizontal, vertical, prevHorizontal, prevVertical, deltaHorizontal, deltaVertical;
     Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        horizontal =  GameObject.FindGameObjectWithTag("Minion").transform.position.x;
+        vertical =  GameObject.FindGameObjectWithTag("Minion").transform.position.y;
         animator = GetComponent<Animator>();
     }
 
