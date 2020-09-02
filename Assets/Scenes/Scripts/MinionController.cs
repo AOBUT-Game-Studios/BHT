@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MinionController : MonoBehaviour
 {
-    bool hired = false;
+    
     
 
 
@@ -16,9 +16,5 @@ public class MinionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hired)   
-        {
-
-        }
     }
 }

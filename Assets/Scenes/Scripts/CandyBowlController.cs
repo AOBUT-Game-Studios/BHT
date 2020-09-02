@@ -8,7 +8,7 @@ public class CandyBowlController : MonoBehaviour
     float scale;
     public int candy = 40;
     public int candySubtract = 10;
-    public float candyPickUpTime = 3.0f;
+    
     int quality;
     
     float timer;
@@ -24,7 +24,7 @@ public class CandyBowlController : MonoBehaviour
     {
         
     }
-    void OnTriggerEnter(Collider other) {
-        candy-= candySubtract;
+    public void candyUpdate() {
+
     }
 }

@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Minion
   - Bowl
+  - DropOffZone
+  - CandyPileCounter
+  - CandyCounter
+  - HealthBar
+  - StaminaBar
   layers:
   - Default
   - TransparentFX
