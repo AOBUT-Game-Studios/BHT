@@ -9,8 +9,8 @@ public class MinionAnimation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        horizontal =  GameObject.FindGameObjectWithTag("Minion").transform.position.x;
-        vertical =  GameObject.FindGameObjectWithTag("Minion").transform.position.y;
+        horizontal =  this.transform.position.x;
+        vertical =  this.transform.position.y;
         animator = GetComponent<Animator>();
     }
 
@@ -19,8 +19,8 @@ public class MinionAnimation : MonoBehaviour
     {
         prevHorizontal = horizontal;
         prevVertical = vertical;
-        horizontal =  GameObject.FindGameObjectWithTag("Minion").transform.position.x;
-        vertical =  GameObject.FindGameObjectWithTag("Minion").transform.position.y;
+        horizontal =  this.transform.position.x;
+        vertical =  this.transform.position.y;
         deltaVertical = vertical - prevVertical;
         deltaHorizontal = horizontal - prevHorizontal;
         if(deltaVertical == 0 && deltaHorizontal == 0)
