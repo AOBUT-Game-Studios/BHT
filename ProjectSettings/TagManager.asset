@@ -13,6 +13,8 @@ TagManager:
   - StaminaBar
   - Enemy
   - MainCharacter
+  - HostageZone
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -23,10 +25,10 @@ TagManager:
   - 
   - 
   - Obstacle
-  - 
-  - 
-  - 
-  - 
+  - Minion
+  - Enemy
+  - Projectile
+  - MainCharacter
   - 
   - 
   - 

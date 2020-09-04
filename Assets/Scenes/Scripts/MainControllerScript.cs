@@ -26,11 +26,14 @@ public class MainControllerScript : MonoBehaviour
     Animator animator;
 
 
+    // prefabs
+    public GameObject projectilePrefab;
 
     // HP
     public float maxHP = 10.0f;
     float HP;
-    
+    Vector2 lookDirection = new Vector2(0, 0);
+
     Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -64,7 +67,22 @@ public class MainControllerScript : MonoBehaviour
         animator.SetFloat("MoveX", horizontal);
         animator.SetFloat("MoveY", vertical);
 
+        Vector2 move = new Vector2(horizontal, vertical);
+          if(!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
+        {
+            lookDirection.Set(move.x, move.y);
+            lookDirection.Normalize();
+        }
         
+    }
+    public void launchProjectile()
+    {
+        GameObject projectileObject = Instantiate(projectilePrefab, rb.position + Vector2.up * 0.5f, Quaternion.identity);
+        ProjectileController projectile = projectileObject.GetComponent<ProjectileController>();
+        if(projectile != null && projectileObject != null)
+        {
+            projectile.launch(lookDirection, 300);
+        }
     }
     void FixedUpdate() 
     {
@@ -142,13 +160,11 @@ public class MainControllerScript : MonoBehaviour
 
 
     public void changeHealth(float value) {
-        if(HP + value > 0.0f) {
-            HP = Mathf.Clamp(HP + value, 0, maxHP);
+            HP = Mathf.Clamp(HP + value, 0.0f, maxHP);
             healthBar.setBar(HP, maxHP);
-        } else {
-            // player is dead
-            HP = 0.0f;
-            healthBar.setBar(HP, maxHP);
-        }
+            if(HP <= 0.0f)
+            {
+                // player is dead
+            }
     }
 }

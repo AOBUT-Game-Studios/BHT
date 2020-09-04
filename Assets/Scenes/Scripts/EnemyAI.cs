@@ -47,8 +47,7 @@ public class EnemyAI : MonoBehaviour
 
         roamMax = roamInterval;
         // start roaming
-        goToHostageZone();
-        // roam();
+        roam();
     }
 
     // Update is called once per frame
@@ -71,13 +70,22 @@ public class EnemyAI : MonoBehaviour
             {
                 if(hit[i].collider.gameObject.tag == "Minion")
                 {
-                    Debug.Log("Going after: " + hit[i].collider.gameObject.name);
-                    chase(hit[i].collider.gameObject);
+                    // go after minion if there isn't a minion captured already
+                    if(status != "flee") 
+                    {
+                        chase(hit[i].collider.gameObject);
+                        Debug.Log("Going after: " + hit[i].collider.gameObject.name);
+                        break;
+                    }
                 }
                 else if(hit[i].collider.gameObject.tag == "MainCharacter")
                 {
-                    Debug.Log("Going after: MainCharacter");
-                    chaseMainCharacter();    
+                    if(status != "flee")
+                    {
+                        Debug.Log("Going after: MainCharacter");
+                        chaseMainCharacter();
+                        break;
+                    }
                 }
             }
         }
@@ -118,8 +126,38 @@ public class EnemyAI : MonoBehaviour
     }
     public void goToHostageZone()
     {
-            status = "flee";
-            ds.target = hostageZones[Random.Range(0, hostageZones.Length)].transform;
-            path.maxSpeed = fleeSpeed;
+        status = "flee";
+
+        // go to one of the hostage zones
+        ds.target = hostageZones[Random.Range(0, hostageZones.Length)].transform;
+        path.maxSpeed = fleeSpeed;
+    }
+    void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "HostageZone")
+        {
+            Debug.Log("enemy in hostage zone");
+            // go back to roaming
+            Invoke("roam", 5.0f);
+        } else if(other.tag == "Projectile")
+        {
+            changeHealth(-5.0f);
+        }
+        else if(other.tag == "MainCharacter")
+        {
+            MainControllerScript controller = other.gameObject.GetComponent<MainControllerScript>();
+            if(controller != null)
+            {
+                controller.changeHealth(-5.0f);
+            }
+        }
+    }
+    void changeHealth(float value)
+    {
+        health = Mathf.Clamp(health + value, 0.0f, maxHealth);
+        if(health <= 0.0f)
+        {
+            // death animation?
+            Destroy(gameObject);
+        }
     }
 }

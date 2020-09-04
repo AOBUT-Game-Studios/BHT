@@ -35,6 +35,11 @@ public class clicker : MonoBehaviour
                         // get component of the minion clicked and make them hired
                         MinionTarget minionController = hit.collider.gameObject.GetComponent<MinionTarget>();
                         minionController.hired = true;
+                        if(minionController.status == "hostage")
+                        {
+                            minionController.status = "roam";
+                            minionController.changeTargets();
+                        }
                         Debug.Log("Minion: " + hit.collider.gameObject.name + " is now hired");
                 }
             }
@@ -43,7 +48,11 @@ public class clicker : MonoBehaviour
                 Cursor.SetCursor(cursorEnemy, hotSpot, cursorMode);
                 if(Input.GetMouseButtonDown(0))
                 {
-                    // get component of the enemy and damage them
+                    MainControllerScript controller = GameObject.Find("MainCharacter").GetComponent<MainControllerScript>();
+                    if(controller != null)
+                    {
+                        controller.launchProjectile();
+                    }
                 }
                 
             } else {

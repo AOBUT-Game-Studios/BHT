@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1557352539457234567}
   - component: {fileID: 5307285489861777064}
   - component: {fileID: 5742609059850919017}
-  m_Layer: 0
+  - component: {fileID: 8546938766453154840}
+  m_Layer: 12
   m_Name: MainCharacter
   m_TagString: MainCharacter
   m_Icon: {fileID: 0}
@@ -54,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0b1cb3d07c892e44ea3465553d9765ae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,7 +108,8 @@ MonoBehaviour:
   staminaSpeed: 1
   staminaBarObject: {fileID: 0}
   healthBarObject: {fileID: 0}
-  maxHP: 0
+  projectilePrefab: {fileID: 3010517436591825318, guid: 22fec8d269c0a51439d1865e6233535c, type: 3}
+  maxHP: 10
 --- !u!50 &1557352539457234567
 Rigidbody2D:
   serializedVersion: 4
@@ -174,3 +176,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &8546938766453154840
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4191022214411772912}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.18056297}
+  serializedVersion: 2
+  m_Radius: 1.680563

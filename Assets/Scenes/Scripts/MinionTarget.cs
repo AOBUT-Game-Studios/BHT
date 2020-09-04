@@ -14,12 +14,15 @@ public class MinionTarget : MonoBehaviour
     int candy = 0;
     public float candyPickUpTime = 3.0f;
     public float candyDropOffTime = 5.0f;
+    public float speed = 2.0f;
+    public string status = "roam";
+    AIPath path;
     bool abducted = false;
     
     // Start is called before the first frame update
     void Start()
     {
-
+        path = GetComponent<AIPath>();
         houses = new Transform[GameObject.Find("Houses").transform.childCount];
         for(int i = 0; i < houses.Length; i++)
         {
@@ -46,60 +49,64 @@ public class MinionTarget : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Bowl")
+        if(other != null)
         {
-            if(!abducted)
+            if(other.tag == "Bowl")
             {
-                Debug.Log("Entered Candy Bowl");    
-                // wait for 3 seconds
-                // take candy from bowl if hired
-                if(hired) Invoke("pickUpCandy", candyPickUpTime);
-                Invoke("changeTargets", candyPickUpTime);
+                if(!abducted)
+                {
+                    Debug.Log("Entered Candy Bowl");    
+                    // wait for 3 seconds
+                    // take candy from bowl if hired
+                    if(hired) Invoke("pickUpCandy", candyPickUpTime);
+                    Invoke("changeTargets", candyPickUpTime);
+                }
+            } 
+            // if at drop off zone
+            else if(other.tag == "DropOffZone")
+            {   
+                if(hired && !abducted) 
+                {
+                    Invoke("dropOffCandy", candyDropOffTime);
+                    Invoke("changeTargets", candyDropOffTime);
+                }
             }
-        } 
-        // if at drop off zone
-        else if(other.tag == "DropOffZone")
-        {   
-            if(hired && !abducted) 
+            else if(other.tag == "Enemy")
             {
-                Invoke("dropOffCandy", candyDropOffTime);
-                Invoke("changeTargets", candyDropOffTime);
+                EnemyAI eAI = other.GetComponent<EnemyAI>();
+                if(eAI.status != "flee" && eAI != null)
+                {
+                    destination.target = other.transform;
+                    eAI.goToHostageZone();
+                    path.maxSpeed = eAI.GetComponent<AIPath>().maxSpeed + 20.0f;
+                }
             }
-        } else if(other.tag == "Enemy")
-        {
-            EnemyAI eAI = other.GetComponent<EnemyAI>();
-            Debug.Log("colliding with chasing enemy");
-            if(eAI.status != "flee")
+            else if(other.tag == "HostageZone")
             {
-                Debug.Log("colliding with unfleeing enemy");
-                GetComponent<CircleCollider2D>().isTrigger = true; 
-                destination.target = other.transform;
-                eAI.goToHostageZone();
+                status = "hostage";
+                destination.target = other.gameObject.transform;
             }
         }
     }
-    void changeTargets() 
+    public void changeTargets() 
     {
+        path.maxSpeed = speed;
         if(hired && candy >= maxCandy)
         {
             destination.target = GameObject.Find("CandyPile").transform;
         }
         else
         {
-            changeHouses();
-        }
-    }
-    void changeHouses()
-    {
-        bool changeTarget = true;
-        while(changeTarget)
-        {
-            houseIndex = Random.Range(0, houses.Length);
-            if(houseIndex != prevHouseIndex)
+            bool changeTarget = true;
+            while(changeTarget)
             {
-                destination.target = houses[houseIndex];
-                prevHouseIndex = houseIndex;
-                changeTarget = false;
+                houseIndex = Random.Range(0, houses.Length);
+                if(houseIndex != prevHouseIndex)
+                {
+                    destination.target = houses[houseIndex];
+                    prevHouseIndex = houseIndex;
+                    changeTarget = false;
+                }
             }
         }
     }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7282514252245683279}
   - component: {fileID: 1101096258}
   - component: {fileID: 1810737392134897511}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -193,8 +193,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roamingSpeed: 1.9
   chasingSpeed: 5.1
-  fleeingSpeed: 5.1
+  rageSpeed: 7
+  fleeSpeed: 5.1
   maxHealth: 20
+  status: roam
+  roamInterval: 10
 --- !u!1001 &7599068261318312915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -249,6 +252,10 @@ PrefabInstance:
     - target: {fileID: 8450473774681404196, guid: 32e527df4a0d9db41a5603d63508670b, type: 3}
       propertyPath: m_Name
       value: EnemeyBarneyGFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450473774681404196, guid: 32e527df4a0d9db41a5603d63508670b, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32e527df4a0d9db41a5603d63508670b, type: 3}
