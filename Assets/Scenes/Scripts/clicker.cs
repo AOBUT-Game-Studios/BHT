@@ -6,12 +6,12 @@ public class clicker : MonoBehaviour
 {
     // Start is called before the first frame update
     MinionTarget hired;
-    public Texture2D cursorTexture, cursorMinion;
+    public Texture2D cursorDefault, cursorMinion, cursorEnemy;
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
     void Start()
     {
-        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+        Cursor.SetCursor(cursorDefault, hotSpot, cursorMode);
     }
 
     // Update is called once per frame
@@ -22,20 +22,37 @@ public class clicker : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
-        if(hit.collider.gameObject.tag == "Minion")
+
+        // check if collider is not a null
+        if(hit.collider != null)
         {
-            Cursor.SetCursor(cursorMinion, hotSpot, cursorMode);
-        } else {
-            Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
-        }
-        if(Input.GetMouseButtonDown(0))
-        {
+            // if hovering over a minion
             if(hit.collider.gameObject.tag == "Minion")
             {
-                Debug.Log("Minion Clicked" + hit.collider.gameObject.name);
-                hired = hit.collider.gameObject.GetComponent<MinionTarget>();
-                hired.hired = true;
+                Cursor.SetCursor(cursorMinion, hotSpot, cursorMode);
+                if(Input.GetMouseButtonDown(0))
+                {
+                        // get component of the minion clicked and make them hired
+                        MinionTarget minionController = hit.collider.gameObject.GetComponent<MinionTarget>();
+                        minionController.hired = true;
+                        Debug.Log("Minion: " + hit.collider.gameObject.name + " is now hired");
+                }
             }
+            else if(hit.collider.gameObject.tag == "Enemy")
+            {
+                Cursor.SetCursor(cursorEnemy, hotSpot, cursorMode);
+                if(Input.GetMouseButtonDown(0))
+                {
+                    // get component of the enemy and damage them
+                }
+                
+            } else {
+                // default cursor
+                Cursor.SetCursor(cursorDefault, hotSpot, cursorMode);
+            }
+        } else {
+                // default cursor
+                Cursor.SetCursor(cursorDefault, hotSpot, cursorMode);
         }
     }
 }

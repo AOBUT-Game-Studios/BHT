@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3451439134103515166}
   - component: {fileID: 3917190314629373720}
   - component: {fileID: 980931260}
+  - component: {fileID: 1148322418045907490}
   m_Layer: 0
   m_Name: Minion
   m_TagString: Minion
@@ -191,6 +192,33 @@ MonoBehaviour:
   hired: 1
   maxCandy: 20
   candyPickUpTime: 3
+  candyDropOffTime: 5
+--- !u!61 &1148322418045907490
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451439134103515172}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00737381, y: 0.94746685}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.4599075, y: 2.8949337}
+  m_EdgeRadius: 0
 --- !u!1001 &3298418460696584452
 PrefabInstance:
   m_ObjectHideFlags: 0

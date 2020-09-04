@@ -14,6 +14,7 @@ public class MinionTarget : MonoBehaviour
     int candy = 0;
     public float candyPickUpTime = 3.0f;
     public float candyDropOffTime = 5.0f;
+    bool abducted = false;
     
     // Start is called before the first frame update
     void Start()
@@ -47,19 +48,33 @@ public class MinionTarget : MonoBehaviour
     {
         if(other.tag == "Bowl")
         {
-            Debug.Log("Entered Candy Bowl");    
-            // wait for 3 seconds
-            // take candy from bowl if hired
-            if(hired) Invoke("pickUpCandy", candyPickUpTime);
-            Invoke("changeTargets", candyPickUpTime);
+            if(!abducted)
+            {
+                Debug.Log("Entered Candy Bowl");    
+                // wait for 3 seconds
+                // take candy from bowl if hired
+                if(hired) Invoke("pickUpCandy", candyPickUpTime);
+                Invoke("changeTargets", candyPickUpTime);
+            }
         } 
         // if at drop off zone
         else if(other.tag == "DropOffZone")
         {   
-            if(hired) 
+            if(hired && !abducted) 
             {
                 Invoke("dropOffCandy", candyDropOffTime);
                 Invoke("changeTargets", candyDropOffTime);
+            }
+        } else if(other.tag == "Enemy")
+        {
+            EnemyAI eAI = other.GetComponent<EnemyAI>();
+            Debug.Log("colliding with chasing enemy");
+            if(eAI.status != "flee")
+            {
+                Debug.Log("colliding with unfleeing enemy");
+                GetComponent<CircleCollider2D>().isTrigger = true; 
+                destination.target = other.transform;
+                eAI.goToHostageZone();
             }
         }
     }
@@ -96,7 +111,7 @@ public class MinionTarget : MonoBehaviour
     }
     void dropOffCandy()
     {
-        CandyPileController pile = GameObject.Find("CandyPile").GetComponent<CandyPileController>();
+        CandyHoleController pile = GameObject.Find("CandyPile").GetComponent<CandyHoleController>();
         pile.candy += candy;
         candy = 0;
 

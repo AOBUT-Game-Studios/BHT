@@ -96,9 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba371bbc6cbb1914aacc5a2394ec153e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candy: 40
+  candy: 150
   candySubtract: 10
-  candyPickUpTime: 3
 --- !u!58 &5069326467986890864
 CircleCollider2D:
   m_ObjectHideFlags: 0

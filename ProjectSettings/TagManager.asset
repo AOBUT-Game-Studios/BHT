@@ -11,6 +11,8 @@ TagManager:
   - CandyCounter
   - HealthBar
   - StaminaBar
+  - Enemy
+  - MainCharacter
   layers:
   - Default
   - TransparentFX
