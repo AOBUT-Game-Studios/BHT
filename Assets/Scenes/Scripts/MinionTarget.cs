@@ -44,7 +44,10 @@ public class MinionTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (hired)
+        {
+            transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -93,7 +96,7 @@ public class MinionTarget : MonoBehaviour
         path.maxSpeed = speed;
         if(hired && candy >= maxCandy)
         {
-            destination.target = GameObject.Find("CandyPile").transform;
+            destination.target = GameObject.Find("CandyHole").transform;
         }
         else
         {
@@ -118,7 +121,7 @@ public class MinionTarget : MonoBehaviour
     }
     void dropOffCandy()
     {
-        CandyHoleController pile = GameObject.Find("CandyPile").GetComponent<CandyHoleController>();
+        CandyHoleController pile = GameObject.Find("CandyHole").GetComponent<CandyHoleController>();
         pile.candy += candy;
         candy = 0;
 

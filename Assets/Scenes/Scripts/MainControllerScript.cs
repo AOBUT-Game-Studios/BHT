@@ -34,7 +34,11 @@ public class MainControllerScript : MonoBehaviour
     float HP;
     Vector2 lookDirection = new Vector2(0, 0);
 
+    //Projectile
+    public float throwForce = 100;
+
     Rigidbody2D rb;
+    
 
     // Start is called before the first frame update
 
@@ -75,13 +79,13 @@ public class MainControllerScript : MonoBehaviour
         }
         
     }
-    public void launchProjectile()
+    public void launchProjectile(Vector2 mousePos)
     {
         GameObject projectileObject = Instantiate(projectilePrefab, rb.position + Vector2.up * 0.5f, Quaternion.identity);
         ProjectileController projectile = projectileObject.GetComponent<ProjectileController>();
         if(projectile != null && projectileObject != null)
         {
-            projectile.launch(lookDirection, 300);
+            projectile.launch(mousePos - rb.position, throwForce);
         }
     }
     void FixedUpdate() 

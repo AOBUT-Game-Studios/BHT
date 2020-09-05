@@ -51,7 +51,7 @@ public class clicker : MonoBehaviour
                     MainControllerScript controller = GameObject.Find("MainCharacter").GetComponent<MainControllerScript>();
                     if(controller != null)
                     {
-                        controller.launchProjectile();
+                        controller.launchProjectile(mousePos2D);
                     }
                 }
                 

@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be618b5150f25541ae68a4fecf5cc0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 2
-  runningSpeed: 5
-  enableStamina: 1
+  walkingSpeed: 8
+  runningSpeed: 11
+  enableStamina: 0
   maxStamina: 10
   staminaLoseMultiplier: 1
   staminaGainMultiplier: 1
@@ -110,6 +110,7 @@ MonoBehaviour:
   healthBarObject: {fileID: 0}
   projectilePrefab: {fileID: 3010517436591825318, guid: 22fec8d269c0a51439d1865e6233535c, type: 3}
   maxHP: 10
+  throwForce: 100
 --- !u!50 &1557352539457234567
 Rigidbody2D:
   serializedVersion: 4
