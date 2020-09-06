@@ -6750,6 +6750,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6856,6 +6857,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1001 &519749937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11480,8 +11512,10 @@ MonoBehaviour:
   cursorDefault: {fileID: 2800000, guid: 4c3745b26eccde735bd258f624c005aa, type: 3}
   cursorMinion: {fileID: 2800000, guid: f4b4c203fa369113fba89365d2e76ca9, type: 3}
   cursorEnemy: {fileID: 2800000, guid: d77629d1285fd4ed6a8608f8abb5c99d, type: 3}
+  cursorBowl: {fileID: 2800000, guid: 86b2705e8a8eac7ba8141368ed110c39, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
+  hirePrice: 50
 --- !u!4 &969030407
 Transform:
   m_ObjectHideFlags: 0
@@ -22704,6 +22738,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4854489840272718946, guid: 5d57202cfc61fa14a8d221186b1fa603, type: 3}
   m_PrefabInstance: {fileID: 1690540245}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1834873921 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4980532964908684091, guid: f1878320c62d54e4e82150204bf617a1, type: 3}
+  m_PrefabInstance: {fileID: 4642527965635105197}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1834873922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834873921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adfd2eb16829154089ea40d45d03e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  candy: 5
 --- !u!4 &1848732957 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4854489840272718946, guid: 5d57202cfc61fa14a8d221186b1fa603, type: 3}
@@ -125830,7 +125882,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: CandyHole
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5359582648910708903, guid: f1878320c62d54e4e82150204bf617a1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f1878320c62d54e4e82150204bf617a1, type: 3}
 --- !u!1001 &4756780927318759279
 PrefabInstance:

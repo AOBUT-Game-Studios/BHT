@@ -23,12 +23,8 @@ public class MinionAnimation : MonoBehaviour
         vertical =  this.transform.position.y;
         deltaVertical = vertical - prevVertical;
         deltaHorizontal = horizontal - prevHorizontal;
-        if(deltaVertical == 0 && deltaHorizontal == 0)
-        {
-            animator.SetBool("Walking", false);
-        } else {
-            animator.SetBool("Walking", true);
-        }
+
+        
         animator.SetFloat("MoveX", deltaHorizontal);
         animator.SetFloat("MoveY", deltaVertical);
     }

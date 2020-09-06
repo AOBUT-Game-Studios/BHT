@@ -70,6 +70,7 @@ public class MainControllerScript : MonoBehaviour
         }
         animator.SetFloat("MoveX", horizontal);
         animator.SetFloat("MoveY", vertical);
+        
 
         Vector2 move = new Vector2(horizontal, vertical);
           if(!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
