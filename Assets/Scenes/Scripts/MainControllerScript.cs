@@ -83,13 +83,7 @@ public class MainControllerScript : MonoBehaviour
         }
         
     }
-    public void flashlight(Vector2 mousePosition)
-    {
-        Vector2 position = mousePosition - rb.position;
-        Quaternion angle = new Quaternion(0.0f, 0.0f, Mathf.Atan2(position.y, position.x), 1);
 
-        GameObject.Find("Flashlight").GetComponent<Transform>().rotation = angle;
-    }
     public void launchProjectile(Vector2 mousePos)
     {
         GameObject projectileObject = Instantiate(projectilePrefab, rb.position + Vector2.up * 0.5f, Quaternion.identity);

@@ -98,6 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   candy: 150
   candySubtract: 10
+  amount: 5
+  collectable: 1
 --- !u!58 &5069326467986890864
 CircleCollider2D:
   m_ObjectHideFlags: 0

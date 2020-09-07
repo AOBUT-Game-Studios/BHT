@@ -8,6 +8,7 @@ public class CandyBowlController : MonoBehaviour
     float scale;
     public int candy = 40;
     public int candySubtract = 10;
+    public int amount = 10;
     
     int quality;
     
@@ -41,6 +42,6 @@ public class CandyBowlController : MonoBehaviour
     {
         collectable = false;
         timer = 10.0f;
-        holeController.candy += 5;
+        holeController.candy += amount;
     }
 }
