@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264928958893266620}
   m_LocalRotation: {x: -0, y: -0, z: 0.9679539, w: 0.25112805}
-  m_LocalPosition: {x: -0.693, y: -0.266, z: 0}
+  m_LocalPosition: {x: -0.681, y: 0.74, z: 0}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_Children: []
   m_Father: {fileID: 3513424437653024661}
@@ -97,7 +97,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2583276694176590239}
   m_LocalRotation: {x: -0, y: -0, z: 0.9747312, w: -0.22338103}
-  m_LocalPosition: {x: 0.676, y: -0.266, z: 0}
+  m_LocalPosition: {x: 0.672, y: 0.704, z: 0}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_Children: []
   m_Father: {fileID: 3513424437653024661}
@@ -171,7 +171,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3137229194995258213}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.75, y: 6.8, z: 0}
+  m_LocalPosition: {x: -5.75, y: 6.83, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 7048193623654364022}
@@ -231,7 +231,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &-4242034860946155127
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -245,10 +245,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008222848, y: -0.3318942}
+  m_Offset: {x: 0.008222848, y: 0.55322903}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1.92, y: 1.92}
     newSize: {x: 1.73, y: 1.73}
     adaptiveTilingThreshold: 0.5
@@ -256,7 +256,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96187705, y: 0.7140551}
+  m_Size: {x: 0.96187705, y: 0.5517503}
   m_EdgeRadius: 0
 --- !u!58 &988119110441713650
 CircleCollider2D:
@@ -299,7 +299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8406642117208713844}
   m_LocalRotation: {x: -0, y: -0, z: 0.98136705, w: -0.19214264}
-  m_LocalPosition: {x: -0.266, y: -0.277, z: 0}
+  m_LocalPosition: {x: -0.258, y: 0.677, z: 0}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_Children: []
   m_Father: {fileID: 3513424437653024661}
@@ -355,15 +355,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1253077959801163124, guid: 8c28fdd568ccad541984441fa592433b, type: 3}
       propertyPath: m_Name
-      value: CandyBowl1
+      value: CandyBowl4
       objectReference: {fileID: 0}
     - target: {fileID: 1403161199508549567, guid: 8c28fdd568ccad541984441fa592433b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.296
+      value: 0.312
       objectReference: {fileID: 0}
     - target: {fileID: 1403161199508549567, guid: 8c28fdd568ccad541984441fa592433b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.666
+      value: 0.304
       objectReference: {fileID: 0}
     - target: {fileID: 1403161199508549567, guid: 8c28fdd568ccad541984441fa592433b, type: 3}
       propertyPath: m_LocalPosition.z

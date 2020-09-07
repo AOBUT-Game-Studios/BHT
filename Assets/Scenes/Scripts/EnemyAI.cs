@@ -9,7 +9,7 @@ public class EnemyAI : MonoBehaviour
     public float roamingSpeed = 1.9f;
     public float chasingSpeed = 5.1f;
     public float rageSpeed = 7.0f;
-    public float fleeSpeed = 5.1f;
+    public float fleeSpeed = 1.0f;
     public float maxHealth = 20.0f;
     public string status = "roam";
     public float roamInterval = 5.0f;
@@ -53,11 +53,15 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.DrawRay(rb.position + Vector2.up * 1.5f + Vector2.right * -2.0f,  new Vector2(-1, 0) * 6f);
+        Debug.DrawRay(rb.position + Vector2.up * 1.5f + Vector2.right * 2.0f,  new Vector2(1, 0) * 6f);
+        Debug.DrawRay(rb.position + Vector2.up * -0.8f,  new Vector2(0, -1) * 6f);
+        Debug.DrawRay(rb.position + Vector2.up * 2.45f,  new Vector2(0, 1) * 6f);
         // check if looking in direction of a minion
-        RaycastHit2D hitLeft = Physics2D.Raycast(rb.position + Vector2.up * 1.45f + Vector2.right * 0.35f, new Vector2(-1, 0), 4f);
-        RaycastHit2D hitRight = Physics2D.Raycast(rb.position + Vector2.up * 1.45f + Vector2.right * 0.35f,  new Vector2(1, 0), 4f);
-        RaycastHit2D hitUp = Physics2D.Raycast(rb.position + Vector2.up * 1.45f + Vector2.right * 0.35f,  new Vector2(0, 1), 4f);
-        RaycastHit2D hitDown = Physics2D.Raycast(rb.position + Vector2.up * 1.45f + Vector2.right * 0.35f,  new Vector2(0, -1), 7f);
+        RaycastHit2D hitLeft = Physics2D.Raycast(rb.position + Vector2.up * 1.5f + Vector2.right * -2.0f, new Vector2(-1, 0), 6f);
+        RaycastHit2D hitRight = Physics2D.Raycast(rb.position + Vector2.up * 1.5f + Vector2.right * 2.0f,  new Vector2(1, 0), 6f);
+        RaycastHit2D hitDown = Physics2D.Raycast(rb.position + Vector2.up * -0.8f,  new Vector2(0, -1), 6f);
+        RaycastHit2D hitUp = Physics2D.Raycast(rb.position + Vector2.up * 2.45f,  new Vector2(0, 1), 6f);
 
 
         // put all raycast hits into an array
@@ -70,20 +74,21 @@ public class EnemyAI : MonoBehaviour
             {
                 if(hit[i].collider.gameObject.tag == "Minion")
                 {
+                    // Debug.Log("Going after minion");
                     // go after minion if there isn't a minion captured already
-                    if(status != "flee") 
+                    if(status == "roam") 
                     {
                         chase(hit[i].collider.gameObject);
-                        // Debug.Log("Going after: " + hit[i].collider.gameObject.name);
+                        Debug.Log("Going after: " + hit[i].collider.gameObject.name);
                         break;
                     }
                 }
                 else if(hit[i].collider.gameObject.tag == "MainCharacter")
                 {
-                    if(status != "flee")
+                    if(status == "roam")
                     {
                         // Debug.Log("Going after: MainCharacter");
-                        chaseMainCharacter();
+                        // chaseMainCharacter();
                         break;
                     }
                 }
@@ -115,8 +120,8 @@ public class EnemyAI : MonoBehaviour
     void chaseMainCharacter()
     {
         status = "chase";
-        // if one in a hundred chance run really fast
-        if(Random.Range(1, 100) == 1)
+        // if one in ten chances run really fast
+        if(Random.Range(1, 10) == 1)
         {
             path.maxSpeed = rageSpeed;
         } else {
@@ -137,7 +142,8 @@ public class EnemyAI : MonoBehaviour
         {
             // go back to roaming
             Invoke("roam", 5.0f);
-        } else if(other.tag == "Projectile")
+        }
+        else if(other.tag == "Projectile")
         {
             changeHealth(-5.0f);
         }
@@ -156,6 +162,7 @@ public class EnemyAI : MonoBehaviour
         if(health <= 0.0f)
         {
             // death animation?
+            
             Destroy(gameObject);
         }
     }

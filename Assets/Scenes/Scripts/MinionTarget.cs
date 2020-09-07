@@ -35,7 +35,7 @@ public class MinionTarget : MonoBehaviour
         destination = GetComponent<AIDestinationSetter>();  
         houseIndex = Random.Range(0, houses.Length);
         prevHouseIndex = houseIndex;
-
+        
         
         destination.target = houses[houseIndex];
         
@@ -47,6 +47,12 @@ public class MinionTarget : MonoBehaviour
         if (hired)
         {
             transform.GetChild(0).gameObject.SetActive(true);
+        }
+        if(path.target == null)
+        {
+            Renderer[] allChildRenderers = GetComponentsInChildren<Renderer>();
+            foreach(Renderer R in allChildRenderers ) R.enabled = true;
+            changeTargets();
         }
     }
 
@@ -82,13 +88,15 @@ public class MinionTarget : MonoBehaviour
                     destination.target = other.transform;
                     eAI.goToHostageZone();
                     path.maxSpeed = eAI.GetComponent<AIPath>().maxSpeed + 20.0f;
+
+                    // disable renderer
+                    Renderer[] allChildRenderers = GetComponentsInChildren<Renderer>();
+                    foreach(Renderer R in allChildRenderers ) R.enabled = false;
                 }
             }
             else if(other.tag == "HostageZone")
             {
                 Destroy(gameObject);
-                status = "hostage";
-                destination.target = other.gameObject.transform;
             }
         }
     }
@@ -125,11 +133,5 @@ public class MinionTarget : MonoBehaviour
         CandyHoleController pile = GameObject.Find("CandyHole").GetComponent<CandyHoleController>();
         pile.candy += candy;
         candy = 0;
-
-        // update UI
-        /*
-        TextMeshPro text = GameObject.Find("CandyPileCounter").GetComponent<TextMeshPro>();
-        text.SetText(pile.candy.ToString());
-        */
     }
 }

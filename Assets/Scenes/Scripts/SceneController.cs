@@ -18,9 +18,9 @@ public class SceneController : MonoBehaviour
     string UISeconds;
     string UIMinutes;
     int timeInt;
-    public int[] storm1 = {120, 150};
-    public int[] storm2 = {210, 240};
-    bool stormOn = false;
+    public int storm1 = 120;
+    public int storm2 = 210;
+    public bool stormOn = true;
     float flickerStart, burnStart;
     float intensityValue = 0.5f;
 
@@ -36,28 +36,14 @@ public class SceneController : MonoBehaviour
     void Start()
     {
         gameTimeSeconds = gameTimeMinutes * 60;
-        if(Random.Range(0, 1) == 1)
-        {
-
-        }
-        Invoke("stormStart", Random.Range(0.0f, 20.0f));
+        stormStart();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeInt = Mathf.FloorToInt(Time.time);
-        // convert time.time to seconds and minutes
-        currentGameTimeSeconds = (timeInt % 60);
-        currentGameTimeMinutes = (timeInt % 3600) / 60;
-        
-        // if seconds are below 10 print them as "09" instead of "9"
-        UISeconds = (currentGameTimeSeconds < 10) ? '0' + currentGameTimeSeconds.ToString() : currentGameTimeSeconds.ToString();
-        UIMinutes = (17 + currentGameTimeMinutes).ToString();
-
-        // update time        
-        timerText.GetComponent<TMP_Text>().text = UIMinutes + ":" + UISeconds;
-
+        updateTime();
+        globalIntensity();
 
         if(Time.time >= gameTimeSeconds)
         {
@@ -66,14 +52,36 @@ public class SceneController : MonoBehaviour
 
 
         // storm events
-        if((Time.time == storm1[0] || Time.time == storm2[0]) && !stormOn)
+        if((Time.time == storm1 || Time.time == storm2) && !stormOn)
         {
-            stormOn = true;
+            stormStart();
+        }
+    }
+    void updateTime()
+    {
+        timeInt = Mathf.FloorToInt(Time.time);
+        // convert time.time to seconds and minutes
+        currentGameTimeSeconds = (timeInt % 60);
+        currentGameTimeMinutes = (timeInt % 3600) / 60;
+        
+        // if seconds are below 10 print them as "09" instead of "9"
+        UISeconds = (currentGameTimeSeconds < 10) ? '0' + currentGameTimeSeconds.ToString() : currentGameTimeSeconds.ToString();
+        UIMinutes = (19 + currentGameTimeMinutes).ToString();
+
+        // update time        
+        timerText.GetComponent<TMP_Text>().text = UIMinutes + ":" + UISeconds;
+    }
+    void globalIntensity()
+    {
+        if(!stormOn)
+        {
+            GameObject.Find("Global Light 2D").GetComponent<Light2D>().intensity = ((gameTimeSeconds - currentGameTimeSeconds) / (gameTimeSeconds / 0.4f)) + 0.1f + brightnessOffset;
         }
     }
     public void stormStart()
     {
-        GameObject.Find("Global Light 2D").GetComponent<Light2D>().intensity = 0.0f;
+        stormOn = true;
+        GameObject.Find("Global Light 2D").GetComponent<Light2D>().intensity = 0.02f;
         // flicker for 3 seconds
         flickerStart = Time.time;
         flickerLights();
@@ -97,6 +105,7 @@ public class SceneController : MonoBehaviour
                 GameObject.Find("PointLight" + i).GetComponent<Light2D>().intensity = 1;
             }
         }
+        stormOn = false;
     }
     void flickerLights()
     {
