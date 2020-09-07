@@ -38,6 +38,63 @@ TextureImporter:
   - first:
       213: -4637791796141871365
     second: EnemeyBarney_11
+  - first:
+      213: 4692134818958456446
+    second: EnemeyBarney_0
+  - first:
+      213: -8718076439745819334
+    second: EnemeyBarney_1
+  - first:
+      213: -7566062395558950592
+    second: EnemeyBarney_2
+  - first:
+      213: 7472839648897402688
+    second: EnemeyBarney_3
+  - first:
+      213: -4934725449344600042
+    second: EnemeyBarney_4
+  - first:
+      213: -4483940808809836832
+    second: EnemeyBarney_5
+  - first:
+      213: -8427147922622699318
+    second: EnemeyBarney_6
+  - first:
+      213: 4779886677605352119
+    second: EnemeyBarney_7
+  - first:
+      213: -4379653724561923184
+    second: EnemeyBarney_8
+  - first:
+      213: 3358507425627198402
+    second: EnemeyBarney_9
+  - first:
+      213: 2441931789800541322
+    second: EnemeyBarney_10
+  - first:
+      213: -4332382988526778630
+    second: EnemeyBarney_12
+  - first:
+      213: 8954037931268377182
+    second: EnemeyBarney_13
+  - first:
+      213: 600817061531894785
+    second: EnemeyBarney_14
+  - first:
+      213: 5330277341352663250
+    second: EnemeyBarney_15
+  - first:
+      213: 2427786836960517791
+    second: EnemeyBarney_16
+  - first:
+      213: -3093128174467655123
+    second: EnemeyBarney_17
+  - first:
+      213: 2532812379911423381
+    second: EnemeyBarney_18
+  - first:
+      213: 7940469865866044054
+    second: EnemeyBarney_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -141,9 +198,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 369
-        width: 123
-        height: 123
+        y: 393.6
+        width: 98.25
+        height: 98.4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1824e9470476d0f90800000000000000
-      internalID: -6985813920449674623
+      spriteID: e76b24202cfcd1140800000000000000
+      internalID: 4692134818958456446
       vertices: []
       indices: 
       edges: []
@@ -161,10 +218,10 @@ TextureImporter:
       name: EnemeyBarney_1
       rect:
         serializedVersion: 2
-        x: 123
-        y: 369
-        width: 123
-        height: 123
+        x: 98
+        y: 393.6
+        width: 98.25
+        height: 98.4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86926c4403189ec10800000000000000
-      internalID: 2083338346947815784
+      spriteID: a3d8f3c1bab230780800000000000000
+      internalID: -8718076439745819334
       vertices: []
       indices: 
       edges: []
@@ -182,10 +239,10 @@ TextureImporter:
       name: EnemeyBarney_2
       rect:
         serializedVersion: 2
-        x: 246
-        y: 369
-        width: 123
-        height: 123
+        x: 196
+        y: 393.6
+        width: 98.25
+        height: 98.4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19b29de6d903bb920800000000000000
-      internalID: 3007050628927662993
+      spriteID: 04984448652fff690800000000000000
+      internalID: -7566062395558950592
       vertices: []
       indices: 
       edges: []
@@ -203,10 +260,10 @@ TextureImporter:
       name: EnemeyBarney_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 246
-        width: 123
-        height: 123
+        x: 294
+        y: 393.6
+        width: 98.25
+        height: 98.4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c95baaa384d4db9b0800000000000000
-      internalID: -5062805433477319268
+      spriteID: 0470cff511cd4b760800000000000000
+      internalID: 7472839648897402688
       vertices: []
       indices: 
       edges: []
@@ -224,10 +281,10 @@ TextureImporter:
       name: EnemeyBarney_4
       rect:
         serializedVersion: 2
-        x: 123
-        y: 246
-        width: 123
-        height: 123
+        x: 0
+        y: 295.6
+        width: 98.25
+        height: 98.4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e645a87ea808978c0800000000000000
-      internalID: -4001025459863530386
+      spriteID: 6183cbf5955548bb0800000000000000
+      internalID: -4934725449344600042
       vertices: []
       indices: 
       edges: []
@@ -245,10 +302,10 @@ TextureImporter:
       name: EnemeyBarney_5
       rect:
         serializedVersion: 2
-        x: 246
-        y: 246
-        width: 123
-        height: 123
+        x: 98
+        y: 295.6
+        width: 98.25
+        height: 98.4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2e8266928e0127a0800000000000000
-      internalID: -6403821241112555988
+      spriteID: 0ee03016797d5c1c0800000000000000
+      internalID: -4483940808809836832
       vertices: []
       indices: 
       edges: []
@@ -266,10 +323,10 @@ TextureImporter:
       name: EnemeyBarney_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 123
-        width: 123
-        height: 123
+        x: 196
+        y: 295.6
+        width: 98.25
+        height: 98.4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,8 +334,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1efe44669577c1c0800000000000000
-      internalID: -4483485615235596770
+      spriteID: ac827620d91cc0b80800000000000000
+      internalID: -8427147922622699318
       vertices: []
       indices: 
       edges: []
@@ -287,10 +344,10 @@ TextureImporter:
       name: EnemeyBarney_7
       rect:
         serializedVersion: 2
-        x: 123
-        y: 123
-        width: 123
-        height: 123
+        x: 294
+        y: 295.6
+        width: 98.25
+        height: 98.4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,8 +355,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 084175127a73b5e50800000000000000
-      internalID: 6799089253404316800
+      spriteID: 7b20a4dbb91955240800000000000000
+      internalID: 4779886677605352119
       vertices: []
       indices: 
       edges: []
@@ -308,10 +365,10 @@ TextureImporter:
       name: EnemeyBarney_8
       rect:
         serializedVersion: 2
-        x: 246
-        y: 123
-        width: 123
-        height: 123
+        x: 0
+        y: 197.6
+        width: 98.25
+        height: 98.4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,8 +376,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c46771f6d66403a0800000000000000
-      internalID: -6700117272260287293
+      spriteID: 093254454285833c0800000000000000
+      internalID: -4379653724561923184
       vertices: []
       indices: 
       edges: []
@@ -329,10 +386,10 @@ TextureImporter:
       name: EnemeyBarney_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 123
-        height: 123
+        x: 98
+        y: 197.6
+        width: 98.25
+        height: 98.4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,8 +397,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 693b6194207e63440800000000000000
-      internalID: 4915370040323650454
+      spriteID: 2c35500a5b0db9e20800000000000000
+      internalID: 3358507425627198402
       vertices: []
       indices: 
       edges: []
@@ -350,10 +407,10 @@ TextureImporter:
       name: EnemeyBarney_10
       rect:
         serializedVersion: 2
-        x: 123
-        y: 0
-        width: 123
-        height: 123
+        x: 196
+        y: 197.6
+        width: 98.25
+        height: 98.4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -361,8 +418,197 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9df738fbe1a2d40b0800000000000000
-      internalID: -5742887638277062695
+      spriteID: a8c8bc0660c73e120800000000000000
+      internalID: 2441931789800541322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemeyBarney_11
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 197.6
+        width: 98.25
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe2eb8fee043afb0800000000000000
+      internalID: -4637791796141871365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemeyBarney_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99.6
+        width: 98.25
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af68ae930a840e3c0800000000000000
+      internalID: -4332382988526778630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemeyBarney_13
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 99.6
+        width: 98.25
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a00a6de02234c70800000000000000
+      internalID: 8954037931268377182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemeyBarney_14
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 99.6
+        width: 98.25
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1044a972fe7865800800000000000000
+      internalID: 600817061531894785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemeyBarney_15
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 99.6
+        width: 98.25
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d893ad3003f8f940800000000000000
+      internalID: 5330277341352663250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemeyBarney_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.5999985
+        width: 98.25
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e9667e34b31b120800000000000000
+      internalID: 2427786836960517791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemeyBarney_17
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1.5999985
+        width: 98.25
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a5a1c30500315d0800000000000000
+      internalID: -3093128174467655123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemeyBarney_18
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 1.5999985
+        width: 98.25
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 595055ba07b562320800000000000000
+      internalID: 2532812379911423381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemeyBarney_19
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 1.5999985
+        width: 98.25
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 692a3a8c547323e60800000000000000
+      internalID: 7940469865866044054
       vertices: []
       indices: 
       edges: []

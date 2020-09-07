@@ -23,10 +23,15 @@ public class MinionAnimation : MonoBehaviour
         vertical =  this.transform.position.y;
         deltaVertical = vertical - prevVertical;
         deltaHorizontal = horizontal - prevHorizontal;
-
-        
+        if(deltaHorizontal > deltaVertical)
+        {
         animator.SetFloat("MoveX", deltaHorizontal);
+        } 
+        else if(deltaHorizontal < deltaVertical)
+        {
         animator.SetFloat("MoveY", deltaVertical);
+        }
+        
     }
 
     void FixedUpdate()

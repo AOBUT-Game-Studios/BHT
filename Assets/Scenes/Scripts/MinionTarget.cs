@@ -58,7 +58,7 @@ public class MinionTarget : MonoBehaviour
             {
                 if(!abducted)
                 {
-                    Debug.Log("Entered Candy Bowl");    
+                    // Debug.Log("Entered Candy Bowl");    
                     // wait for 3 seconds
                     // take candy from bowl if hired
                     if(hired) Invoke("pickUpCandy", candyPickUpTime);
@@ -86,6 +86,7 @@ public class MinionTarget : MonoBehaviour
             }
             else if(other.tag == "HostageZone")
             {
+                Destroy(gameObject);
                 status = "hostage";
                 destination.target = other.gameObject.transform;
             }

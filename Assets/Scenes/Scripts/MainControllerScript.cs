@@ -35,7 +35,7 @@ public class MainControllerScript : MonoBehaviour
     Vector2 lookDirection = new Vector2(0, 0);
 
     //Projectile
-    public float throwForce = 100;
+    public float throwForce = 200;
 
     Rigidbody2D rb;
     
@@ -46,15 +46,18 @@ public class MainControllerScript : MonoBehaviour
     {    
         stamina = maxStamina;
         staminaTimeout = staminaSpeed;
-        staminaBar = staminaBarObject.GetComponent<UIBar>();
-        healthBar = healthBarObject.GetComponent<UIBar>();
+        
         
         // HP stuff
         HP = maxHP;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        
+        /*
+        staminaBar = staminaBarObject.GetComponent<UIBar>();
+        healthBar = healthBarObject.GetComponent<UIBar>();
         staminaBar.setBar(1.0f, 10.0f);
-                
+          */      
     }
 
     // Update is called once per frame
@@ -79,6 +82,13 @@ public class MainControllerScript : MonoBehaviour
             lookDirection.Normalize();
         }
         
+    }
+    public void flashlight(Vector2 mousePosition)
+    {
+        Vector2 position = mousePosition - rb.position;
+        Quaternion angle = new Quaternion(0.0f, 0.0f, Mathf.Atan2(position.y, position.x), 1);
+
+        GameObject.Find("Flashlight").GetComponent<Transform>().rotation = angle;
     }
     public void launchProjectile(Vector2 mousePos)
     {
@@ -152,7 +162,7 @@ public class MainControllerScript : MonoBehaviour
                 }
                 // Debug.Log("Stamina: " + stamina + "/" + maxStamina + ". Speed: " + speed + "/" + runningSpeed);
             }
-            staminaBar.setBar(stamina, maxStamina);
+            // staminaBar.setBar(stamina, maxStamina);
         }
 
         if(staminaDisabled) speed = walkingSpeed;
@@ -166,7 +176,7 @@ public class MainControllerScript : MonoBehaviour
 
     public void changeHealth(float value) {
             HP = Mathf.Clamp(HP + value, 0.0f, maxHP);
-            healthBar.setBar(HP, maxHP);
+            // healthBar.setBar(HP, maxHP);
             if(HP <= 0.0f)
             {
                 // player is dead

@@ -22,7 +22,7 @@ public class clicker : MonoBehaviour
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-
+        GameObject.Find("MainCharacter").GetComponent<MainControllerScript>().flashlight(mousePos2D);
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
 
@@ -60,7 +60,7 @@ public class clicker : MonoBehaviour
                 }
                 
             } else if(hit.collider.gameObject.tag == "Bowl" && hit.collider.gameObject.GetComponent<CandyBowlController>().collectable == true) {
-                // default cursor
+                // bowl cursor
                 Cursor.SetCursor(cursorBowl, hotSpot, cursorMode);
                 if(Input.GetMouseButtonDown(0))
                 {

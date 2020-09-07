@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3748315361760720326}
   - component: {fileID: 4978161159190537501}
   - component: {fileID: 7172540730521138136}
-  - component: {fileID: 5359582648910708903}
+  - component: {fileID: 1834873922}
   m_Layer: 0
   m_Name: CandyHole
   m_TagString: DropOffZone
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4980532964908684091}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.6, y: 3.15, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1.92, y: 1.92, z: 1.92}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -127,7 +127,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6961178, y: 0.55457157}
   m_EdgeRadius: 0
---- !u!114 &5359582648910708903
+--- !u!114 &1834873922
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,4 +139,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1adfd2eb16829154089ea40d45d03e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candy: 0
+  candy: 5

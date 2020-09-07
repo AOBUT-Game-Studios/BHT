@@ -12,7 +12,7 @@ public class EnemyAI : MonoBehaviour
     public float fleeSpeed = 5.1f;
     public float maxHealth = 20.0f;
     public string status = "roam";
-    public float roamInterval = 10.0f;
+    public float roamInterval = 5.0f;
     float roamMax;
     float roamTime;
     GameObject[] hostageZones;
@@ -74,7 +74,7 @@ public class EnemyAI : MonoBehaviour
                     if(status != "flee") 
                     {
                         chase(hit[i].collider.gameObject);
-                        Debug.Log("Going after: " + hit[i].collider.gameObject.name);
+                        // Debug.Log("Going after: " + hit[i].collider.gameObject.name);
                         break;
                     }
                 }
@@ -82,7 +82,7 @@ public class EnemyAI : MonoBehaviour
                 {
                     if(status != "flee")
                     {
-                        Debug.Log("Going after: MainCharacter");
+                        // Debug.Log("Going after: MainCharacter");
                         chaseMainCharacter();
                         break;
                     }
@@ -135,7 +135,6 @@ public class EnemyAI : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "HostageZone")
         {
-            Debug.Log("enemy in hostage zone");
             // go back to roaming
             Invoke("roam", 5.0f);
         } else if(other.tag == "Projectile")

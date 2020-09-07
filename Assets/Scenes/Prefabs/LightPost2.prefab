@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1406035735005796836, guid: dca8a9cb6fc17f1498ac3fdae3669f47, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2461541027536289044, guid: dca8a9cb6fc17f1498ac3fdae3669f47, type: 3}
       propertyPath: m_Name
-      value: LightPost (13)
+      value: LightPost2
       objectReference: {fileID: 0}
     - target: {fileID: 7524741878702001058, guid: dca8a9cb6fc17f1498ac3fdae3669f47, type: 3}
       propertyPath: m_LocalPosition.x
