@@ -15,6 +15,7 @@ TagManager:
   - MainCharacter
   - HostageZone
   - Projectile
+  - House
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,7 @@ TagManager:
   - MainCharacter
   - MainCharacterObstacle
   - Enemy Obstacle
-  - 
+  - click
   - 
   - 
   - 

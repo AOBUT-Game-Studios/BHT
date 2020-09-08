@@ -18,11 +18,16 @@ public class SceneController : MonoBehaviour
     string UISeconds;
     string UIMinutes;
     int timeInt;
-    public int storm1 = 120;
-    public int storm2 = 210;
+    public float storm1 = 120;
+    public float storm2 = 210;
     public bool stormOn = true;
     float flickerStart, burnStart;
     float intensityValue = 0.5f;
+
+    //Enemy Spawning
+    public GameObject enemyPrefab;
+    public Transform enemyParent;
+    public Transform spawnLocations;
 
 
     // objects
@@ -36,7 +41,6 @@ public class SceneController : MonoBehaviour
     void Start()
     {
         gameTimeSeconds = gameTimeMinutes * 60;
-        stormStart();
     }
 
     // Update is called once per frame
@@ -52,10 +56,14 @@ public class SceneController : MonoBehaviour
 
 
         // storm events
-        if((Time.time == storm1 || Time.time == storm2) && !stormOn)
+        if(((Time.time >= storm1 && Time.time <= storm1 + 1) || (Time.time >= storm2 && Time.time <= storm1 + 1)) && !stormOn)
         {
             stormStart();
         }
+    }
+    void spawnEnemy() 
+    {
+        // Instantiate(enemyPrefab, spawnLocations, Quaternion.identity, enemyParent);
     }
     void updateTime()
     {

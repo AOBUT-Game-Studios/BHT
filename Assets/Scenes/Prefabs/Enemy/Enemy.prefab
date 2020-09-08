@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1148977533222268784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 2}
   m_Children:
   - {fileID: 3197179351261510204}
   m_Father: {fileID: 0}
@@ -208,7 +208,7 @@ Animator:
   m_GameObject: {fileID: 2032053010245447927}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0e45b0bee13d31046b6a75a9ba2b723e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7099d20c116494213a11db87f0722961, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -217,7 +217,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4923066395489730626
+--- !u!114 &7821481036086380533
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2032053010245447927}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77277bd4fec135c2096c778fe36d1f87, type: 3}
+  m_Script: {fileID: 11500000, guid: 93f8e1614fd3bcaaa84a3cdfbdd0666b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &7599068261318312915

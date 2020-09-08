@@ -60,6 +60,7 @@ public class clicker : MonoBehaviour
                 
             } else if(hit.collider.gameObject.tag == "Bowl" && hit.collider.gameObject.GetComponent<CandyBowlController>().collectable == true) {
                 // bowl cursor
+                Debug.Log("Mouse On Bowl");
                 Cursor.SetCursor(cursorBowl, hotSpot, cursorMode);
                 if(Input.GetMouseButtonDown(0))
                 {
