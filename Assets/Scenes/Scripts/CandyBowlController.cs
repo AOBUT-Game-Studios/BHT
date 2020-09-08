@@ -10,14 +10,11 @@ public class CandyBowlController : MonoBehaviour
     public int candySubtract = 10;
     public int amount = 10;
     
-    int quality;
-    
     float timer;
     public bool collectable = true;
     CandyHoleController holeController;
     void Start()
     {
-        quality = Random.Range(0, 5);
         scale = Random.Range(0.34f, 0.6f);
         GetComponent<Transform>().localScale = new Vector3(scale, scale, scale);
         holeController = GameObject.Find("CandyHole").GetComponent<CandyHoleController>();

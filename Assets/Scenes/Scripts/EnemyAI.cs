@@ -22,6 +22,10 @@ public class EnemyAI : MonoBehaviour
     AIDestinationSetter ds;
     AIPath path;
     Rigidbody2D rb;
+    Animator animator;
+
+    // minion
+    
 
 
 
@@ -36,9 +40,10 @@ public class EnemyAI : MonoBehaviour
         GameObject.Find("HostageZoneWest")
         };
         // Get Components
-        ds = GetComponent<AIDestinationSetter>();
-        path = GetComponent<AIPath>();
-        rb = GetComponent<Rigidbody2D>();
+        ds = gameObject.GetComponent<AIDestinationSetter>();
+        path = gameObject.GetComponent<AIPath>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
 
         health = maxHealth;
         
@@ -103,6 +108,7 @@ public class EnemyAI : MonoBehaviour
     }
     void roam()
     {
+        animator.SetBool("IsAbducting", false);
         status = "roam";
         // set speed
         path.maxSpeed = roamingSpeed;
@@ -132,7 +138,7 @@ public class EnemyAI : MonoBehaviour
     public void goToHostageZone()
     {
         status = "flee";
-
+        animator.SetBool("IsAbducting", true);
         // go to one of the hostage zones
         ds.target = hostageZones[Random.Range(0, hostageZones.Length)].transform;
         path.maxSpeed = fleeSpeed;

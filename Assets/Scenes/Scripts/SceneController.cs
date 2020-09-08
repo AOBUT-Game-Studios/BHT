@@ -27,7 +27,24 @@ public class SceneController : MonoBehaviour
     //Enemy Spawning
     public GameObject enemyPrefab;
     public Transform enemyParent;
-    public Transform spawnLocations;
+    public float enemySpawnInterval = 10.0f;
+    float enemySpawnTimeout;
+    public bool incrementEnemySpawn = true;
+    public int enemySpawnCount = 1;
+    public int maxEnemyCount = 10;
+
+    // minion spawning
+    public GameObject minionPrefab;
+    public Transform minionParent;
+    public float minionSpawnInterval = 10.0f;
+    float minionSpawnTimeout;
+    public bool incrementMinionSpawn = false;
+    public int minionSpawnCount = 5;
+    public int maxMinionCount = 20;
+    GameObject[] hostageZones;
+
+
+    
 
 
     // objects
@@ -41,6 +58,13 @@ public class SceneController : MonoBehaviour
     void Start()
     {
         gameTimeSeconds = gameTimeMinutes * 60;
+        minionSpawnTimeout = minionSpawnInterval;
+        hostageZones = new GameObject[4] {
+        GameObject.Find("HostageZoneNorth"),
+        GameObject.Find("HostageZoneSouth"),
+        GameObject.Find("HostageZoneEast"),
+        GameObject.Find("HostageZoneWest")
+        };
     }
 
     // Update is called once per frame
@@ -59,6 +83,30 @@ public class SceneController : MonoBehaviour
         if(((Time.time >= storm1 && Time.time <= storm1 + 1) || (Time.time >= storm2 && Time.time <= storm1 + 1)) && !stormOn)
         {
             stormStart();
+        }
+        if(Time.time >= minionSpawnTimeout)
+        {
+            minionSpawnTimeout = Time.time + minionSpawnInterval;
+            for(int i = 0; i < minionSpawnCount; i++)
+            {
+                if(minionParent.childCount <= maxMinionCount) 
+                {
+                    Instantiate(minionPrefab, GameObject.Find("CandyBowl" + Random.Range(0, GameObject.Find("Houses").transform.childCount)).transform.position + Vector3.left * 1.5f, Quaternion.identity, minionParent);
+                }
+            if(incrementMinionSpawn) minionSpawnCount++;
+            }
+        }
+        if(Time.time >= enemySpawnTimeout)
+        {
+            enemySpawnTimeout = Time.time + enemySpawnInterval;
+            for(int i = 0; i < enemySpawnCount; i++)
+            {
+                if(enemyParent.childCount <= maxEnemyCount) 
+                {
+                    Instantiate(enemyPrefab, hostageZones[Random.Range(0, hostageZones.Length)].transform.position, Quaternion.identity, enemyParent);
+                }
+            if(incrementMinionSpawn) minionSpawnCount++;
+            }
         }
     }
     void spawnEnemy() 

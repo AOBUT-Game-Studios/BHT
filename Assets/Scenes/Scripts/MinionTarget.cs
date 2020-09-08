@@ -85,6 +85,7 @@ public class MinionTarget : MonoBehaviour
                 EnemyAI eAI = other.GetComponent<EnemyAI>();
                 if(eAI.status != "flee" && eAI != null)
                 {
+                    status = "abducted";
                     destination.target = other.transform;
                     eAI.goToHostageZone();
                     path.maxSpeed = eAI.GetComponent<AIPath>().maxSpeed + 20.0f;
@@ -102,6 +103,8 @@ public class MinionTarget : MonoBehaviour
     }
     public void changeTargets() 
     {
+        abducted = false;
+        status = "roam";
         path.maxSpeed = speed;
         if(hired && candy >= maxCandy)
         {
