@@ -260,11 +260,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   hired: 0
-  maxCandy: 20
+  maxCandy: 15
   candyPickUpTime: 3
   candyDropOffTime: 5
   speed: 2
   status: roam
+  bobScream: {fileID: 8300000, guid: 2432b2bd9daa34f2d98dd0ca706fec03, type: 3}
 --- !u!61 &1148322418045907490
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -356,7 +357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7761748385069150255, guid: d16414d8d7dc2b948997c2ca94731546, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7761748385069150416, guid: d16414d8d7dc2b948997c2ca94731546, type: 3}
       propertyPath: m_Name

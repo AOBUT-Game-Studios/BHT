@@ -18,6 +18,7 @@ public class MinionTarget : MonoBehaviour
     public string status = "roam";
     AIPath path;
     bool abducted = false;
+    public AudioClip bobScream;
     
     // Start is called before the first frame update
     void Start()
@@ -60,6 +61,10 @@ public class MinionTarget : MonoBehaviour
     {
         if(other != null)
         {
+            if(other.tag == "HostageZone")
+            {
+                Destroy(gameObject);
+            }
             if(other.tag == "Bowl")
             {
                 if(!abducted)
@@ -93,6 +98,8 @@ public class MinionTarget : MonoBehaviour
                     // disable renderer
                     Renderer[] allChildRenderers = GetComponentsInChildren<Renderer>();
                     foreach(Renderer R in allChildRenderers ) R.enabled = false;
+                    GameObject.Find("MainCharacter").GetComponent<MainControllerScript>().playClip(bobScream);
+
                 }
             }
             else if(other.tag == "HostageZone")
@@ -137,4 +144,5 @@ public class MinionTarget : MonoBehaviour
         pile.candy += candy;
         candy = 0;
     }
+
 }

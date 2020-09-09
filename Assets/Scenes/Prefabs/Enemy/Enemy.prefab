@@ -168,10 +168,12 @@ MonoBehaviour:
   roamingSpeed: 1.9
   chasingSpeed: 5.1
   rageSpeed: 7
-  fleeSpeed: 1
+  fleeSpeed: 3
   maxHealth: 20
   status: roam
   roamInterval: 10
+  alert: {fileID: 1223003337873485161, guid: 4badf678714171da6a80ede2f24d4434, type: 3}
+  deathNoise: {fileID: 8300000, guid: 9067b501b61cec8eb9d27e042f7f3c0a, type: 3}
 --- !u!61 &7088742457866893915
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -26,6 +26,9 @@ public class EnemyAI : MonoBehaviour
 
     // minion
     
+    public GameObject alert;
+    Transform mainCharacter;
+    public AudioClip deathNoise;
 
 
 
@@ -46,8 +49,7 @@ public class EnemyAI : MonoBehaviour
         animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
 
         health = maxHealth;
-        
-
+        mainCharacter = GameObject.Find("MainCharacter").transform;
 
 
         roamMax = roamInterval;
@@ -138,6 +140,8 @@ public class EnemyAI : MonoBehaviour
     public void goToHostageZone()
     {
         status = "flee";
+        GameObject alertObject = Instantiate(alert, mainCharacter.position, mainCharacter.rotation, mainCharacter);
+        alertObject.GetComponent<Alert>().CreateAlert(this.transform);
         animator.SetBool("IsAbducting", true);
         // go to one of the hostage zones
         ds.target = hostageZones[Random.Range(0, hostageZones.Length)].transform;
@@ -147,6 +151,10 @@ public class EnemyAI : MonoBehaviour
         if(other.tag == "HostageZone")
         {
             // go back to roaming
+            if(status == "flee")
+            {
+                Destroy(gameObject);
+            }
             Invoke("roam", 5.0f);
         }
         else if(other.tag == "Projectile")
@@ -168,8 +176,9 @@ public class EnemyAI : MonoBehaviour
         if(health <= 0.0f)
         {
             // death animation?
-            
+            GameObject.Find("MainCharacter").GetComponent<MainControllerScript>().playClip(deathNoise);
             Destroy(gameObject);
+
         }
     }
 }

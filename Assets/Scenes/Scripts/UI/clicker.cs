@@ -11,6 +11,7 @@ public class clicker : MonoBehaviour
     public Vector2 hotSpot = Vector2.zero;
     CandyHoleController holeController;
     public int hirePrice = 30;
+    public AudioClip clip;
     void Start()
     {
         holeController = GameObject.Find("CandyHole").GetComponent<CandyHoleController>();
@@ -65,6 +66,7 @@ public class clicker : MonoBehaviour
                 if(Input.GetMouseButtonDown(0))
                 {
                     hit.collider.gameObject.GetComponent<CandyBowlController>().collectCandy();
+                    GameObject.Find("MainCharacter").GetComponent<MainControllerScript>().playClip(clip);
                     Cursor.SetCursor(cursorDefault, hotSpot, cursorMode);
                 }
             }

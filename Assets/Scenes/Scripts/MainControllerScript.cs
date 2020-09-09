@@ -38,6 +38,8 @@ public class MainControllerScript : MonoBehaviour
     public float throwForce = 200;
 
     Rigidbody2D rb;
+    AudioSource audioSource;
+    public AudioClip toss;
     
 
     // Start is called before the first frame update
@@ -52,6 +54,7 @@ public class MainControllerScript : MonoBehaviour
         HP = maxHP;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         
         /*
         staminaBar = staminaBarObject.GetComponent<UIBar>();
@@ -90,6 +93,7 @@ public class MainControllerScript : MonoBehaviour
         ProjectileController projectile = projectileObject.GetComponent<ProjectileController>();
         if(projectile != null && projectileObject != null)
         {
+            playClip(toss);
             projectile.launch(mousePos - rb.position, throwForce);
         }
     }
@@ -175,5 +179,10 @@ public class MainControllerScript : MonoBehaviour
             {
                 // player is dead
             }
+    }
+
+    public void playClip(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }

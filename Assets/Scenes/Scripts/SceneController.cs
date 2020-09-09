@@ -34,7 +34,8 @@ public class SceneController : MonoBehaviour
     public int maxEnemyCount = 10;
 
     // minion spawning
-    public GameObject minionPrefab;
+    public GameObject bobPrefab, dbobPrefab, boboPrefab;
+    int bobType;
     public Transform minionParent;
     public float minionSpawnInterval = 10.0f;
     float minionSpawnTimeout;
@@ -49,6 +50,7 @@ public class SceneController : MonoBehaviour
 
     // objects
     public GameObject timerText;
+    public AudioClip flickerSound, backgroundMusic;
 
  
 
@@ -91,7 +93,13 @@ public class SceneController : MonoBehaviour
             {
                 if(minionParent.childCount <= maxMinionCount) 
                 {
-                    Instantiate(minionPrefab, GameObject.Find("CandyBowl" + Random.Range(0, GameObject.Find("Houses").transform.childCount)).transform.position + Vector3.left * 1.5f, Quaternion.identity, minionParent);
+                    bobType = Random.Range(1, 4);
+                    switch(bobType)
+                    {
+                        case 1: Instantiate(boboPrefab, GameObject.Find("CandyBowl" + Random.Range(0, GameObject.Find("Houses").transform.childCount)).transform.position + Vector3.left * 1.5f, Quaternion.identity, minionParent); break;
+                        case 2: Instantiate(dbobPrefab, GameObject.Find("CandyBowl" + Random.Range(0, GameObject.Find("Houses").transform.childCount)).transform.position + Vector3.left * 1.5f, Quaternion.identity, minionParent); break;
+                        case 3: Instantiate(bobPrefab, GameObject.Find("CandyBowl" + Random.Range(0, GameObject.Find("Houses").transform.childCount)).transform.position + Vector3.left * 1.5f, Quaternion.identity, minionParent); break;
+                    }
                 }
             if(incrementMinionSpawn) minionSpawnCount++;
             }
@@ -137,6 +145,8 @@ public class SceneController : MonoBehaviour
     public void stormStart()
     {
         stormOn = true;
+        GameObject.Find("Background Music").GetComponent<AudioSource>().clip = flickerSound;
+        GameObject.Find("Background Music").GetComponent<AudioSource>().Play();
         GameObject.Find("Global Light 2D").GetComponent<Light2D>().intensity = 0.02f;
         // flicker for 3 seconds
         flickerStart = Time.time;
@@ -162,6 +172,9 @@ public class SceneController : MonoBehaviour
             }
         }
         stormOn = false;
+        GameObject.Find("Background Music").GetComponent<AudioSource>().clip = backgroundMusic;
+        GameObject.Find("Background Music").GetComponent<AudioSource>().Play();
+
     }
     void flickerLights()
     {
