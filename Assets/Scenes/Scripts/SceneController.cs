@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
@@ -68,7 +69,6 @@ public class SceneController : MonoBehaviour
         GameObject.Find("HostageZoneEast"),
         GameObject.Find("HostageZoneWest")
         };
-        Invoke("stormStart", 2.0f);
     }
 
     // Update is called once per frame
@@ -79,7 +79,7 @@ public class SceneController : MonoBehaviour
 
         if(Time.time >= gameTimeSeconds)
         {
-            // game over
+            SceneManager.LoadScene(2);
         }
 
 
@@ -149,7 +149,8 @@ public class SceneController : MonoBehaviour
 
         stormOn = true;
         GameObject.Find("Rain").GetComponent<AudioSource>().Play();
-        GameObject.Find("Global Light 2D").GetComponent<Light2D>().intensity = 0.02f;
+        GameObject.Find("Background Music").GetComponent<AudioSource>().volume -= 0.2f;
+        GameObject.Find("Global Light 2D").GetComponent<Light2D>().intensity = 0.0f;
         // flicker for 3 seconds
         flickerStart = Time.time + 5.0f;
         Invoke("flickerLights", 5.0f);
@@ -182,7 +183,7 @@ public class SceneController : MonoBehaviour
         }
         stormOn = false;
         GameObject.Find("Background Music").GetComponent<AudioSource>().clip = backgroundMusic;
-        GameObject.Find("Background Music").GetComponent<AudioSource>().Play();
+        GameObject.Find("Background Music").GetComponent<AudioSource>().volume += 0.2f;
 
     }
     void flickerLights()
@@ -237,6 +238,6 @@ public class SceneController : MonoBehaviour
     }
     void lightningStrike2()
     {
-        GameObject.Find("Global Light 2D").GetComponent<Light2D>().intensity = 0.2f;
+        GameObject.Find("Global Light 2D").GetComponent<Light2D>().intensity = 0.0f;
     }
 }
