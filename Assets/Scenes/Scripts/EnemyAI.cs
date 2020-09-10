@@ -29,6 +29,7 @@ public class EnemyAI : MonoBehaviour
     public GameObject alert;
     Transform mainCharacter;
     public AudioClip deathNoise;
+    GameObject abductedMinion;
 
 
 
@@ -137,11 +138,14 @@ public class EnemyAI : MonoBehaviour
         }
         ds.target = GameObject.Find("MainCharacter").transform;
     }
-    public void goToHostageZone()
+    public void goToHostageZone(GameObject minion)
     {
+        abductedMinion = minion;
         status = "flee";
-        GameObject alertObject = Instantiate(alert, mainCharacter.position, mainCharacter.rotation, mainCharacter);
-        alertObject.GetComponent<Alert>().CreateAlert(this.transform);
+        if(minion.GetComponent<MinionTarget>().hired) {
+            GameObject alertObject = Instantiate(alert, mainCharacter.position, mainCharacter.rotation, mainCharacter);
+            alertObject.GetComponent<Alert>().CreateAlert(this.transform);
+        }
         animator.SetBool("IsAbducting", true);
         // go to one of the hostage zones
         ds.target = hostageZones[Random.Range(0, hostageZones.Length)].transform;
@@ -177,8 +181,13 @@ public class EnemyAI : MonoBehaviour
         {
             // death animation?
             GameObject.Find("MainCharacter").GetComponent<MainControllerScript>().playClip(deathNoise);
+            if(abductedMinion != null)
+            {
+                // important to activate the minon FIRST before anything else
+                abductedMinion.SetActive(true);
+                abductedMinion.transform.position = transform.position;
+            }
             Destroy(gameObject);
-
         }
     }
 }

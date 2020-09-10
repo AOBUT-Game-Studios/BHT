@@ -43,6 +43,7 @@ public class SceneController : MonoBehaviour
     public int minionSpawnCount = 5;
     public int maxMinionCount = 20;
     GameObject[] hostageZones;
+    public GameObject lightningObject;
 
 
     
@@ -50,7 +51,7 @@ public class SceneController : MonoBehaviour
 
     // objects
     public GameObject timerText;
-    public AudioClip flickerSound, backgroundMusic;
+    public AudioClip flickerSound, backgroundMusic, burnOutSound;
 
  
 
@@ -67,6 +68,7 @@ public class SceneController : MonoBehaviour
         GameObject.Find("HostageZoneEast"),
         GameObject.Find("HostageZoneWest")
         };
+        Invoke("stormStart", 2.0f);
     }
 
     // Update is called once per frame
@@ -82,7 +84,7 @@ public class SceneController : MonoBehaviour
 
 
         // storm events
-        if(((Time.time >= storm1 && Time.time <= storm1 + 1) || (Time.time >= storm2 && Time.time <= storm1 + 1)) && !stormOn)
+        if(((Time.time >= storm1 && Time.time <= storm1 + 1) || (Time.time >= storm2 && Time.time <= storm2 + 1)) && !stormOn)
         {
             stormStart();
         }
@@ -139,30 +141,37 @@ public class SceneController : MonoBehaviour
     {
         if(!stormOn)
         {
-            GameObject.Find("Global Light 2D").GetComponent<Light2D>().intensity = ((gameTimeSeconds - currentGameTimeSeconds) / (gameTimeSeconds / 0.4f)) + 0.1f + brightnessOffset;
+            GameObject.Find("Global Light 2D").GetComponent<Light2D>().intensity = ((gameTimeSeconds - currentGameTimeSeconds) / (gameTimeSeconds / 0.2f)) + 0.1f + brightnessOffset;
         }
     }
     public void stormStart()
     {
+
         stormOn = true;
-        GameObject.Find("Background Music").GetComponent<AudioSource>().clip = flickerSound;
-        GameObject.Find("Background Music").GetComponent<AudioSource>().Play();
+        GameObject.Find("Rain").GetComponent<AudioSource>().Play();
         GameObject.Find("Global Light 2D").GetComponent<Light2D>().intensity = 0.02f;
         // flicker for 3 seconds
-        flickerStart = Time.time;
-        flickerLights();
+        flickerStart = Time.time + 5.0f;
+        Invoke("flickerLights", 5.0f);
 
         // burn lights
-        burnStart = Time.time + 3.0f;
-        Invoke("burnLights", 3.0f);
-        
+        burnStart = Time.time + 8.0f;
+        Invoke("burnLights", 8.0f);
+
+        // lightning strike
+        Invoke("lightningStrike", 8.0f);
+        Invoke("lightningStrike2", 8.1f);
+        Invoke("lightningStrike", 18.0f);
+        Invoke("lightningStrike2", 18.1f);
         // end storm
         Invoke("stormEnd", 30);
+
 
         // start
     }
     public void stormEnd()
     {
+        GameObject.Find("Rain").GetComponent<AudioSource>().Stop();
         GameObject.Find("Global Light 2D").GetComponent<Light2D>().intensity = 0.25f;
         for(int i = 0; i < GameObject.Find("LightPosts").transform.childCount; i++)
         {
@@ -181,6 +190,9 @@ public class SceneController : MonoBehaviour
         float duration = 3.0f;
         for(int i = 0; i < GameObject.Find("LightPosts").transform.childCount; i++)
         {
+            GameObject.Find("LightPostSounds" + i).GetComponent<AudioSource>().clip = flickerSound;
+            GameObject.Find("LightPostSounds" + i).GetComponent<AudioSource>().loop = true;
+            GameObject.Find("LightPostSounds" + i).GetComponent<AudioSource>().Play();
             if(GameObject.Find("PointLight" + i) != null)
             {
                 GameObject.Find("PointLight" + i).GetComponent<Light2D>().intensity = Random.Range(0.0f, 1.0f);
@@ -212,9 +224,19 @@ public class SceneController : MonoBehaviour
             {
                 if(GameObject.Find("PointLight" + i) != null)
                 {
+                    GameObject.Find("LightPostSounds" + i).GetComponent<AudioSource>().Stop();
                     GameObject.Find("PointLight" + i).GetComponent<Light2D>().intensity = 0;
                 }
             }
         }
+    }
+    void lightningStrike()
+    {
+        lightningObject.GetComponent<AudioSource>().Play();
+        GameObject.Find("Global Light 2D").GetComponent<Light2D>().intensity = 3;
+    }
+    void lightningStrike2()
+    {
+        GameObject.Find("Global Light 2D").GetComponent<Light2D>().intensity = 0.2f;
     }
 }

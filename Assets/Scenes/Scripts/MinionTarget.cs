@@ -8,7 +8,7 @@ public class MinionTarget : MonoBehaviour
 {
     AIDestinationSetter destination;
     public Transform[] houses;
-    public bool hired = true;
+    public bool hired = false;
     int houseIndex, prevHouseIndex;
     public int maxCandy = 20;
     int candy = 0;
@@ -51,8 +51,6 @@ public class MinionTarget : MonoBehaviour
         }
         if(path.target == null)
         {
-            Renderer[] allChildRenderers = GetComponentsInChildren<Renderer>();
-            foreach(Renderer R in allChildRenderers ) R.enabled = true;
             changeTargets();
         }
     }
@@ -92,13 +90,12 @@ public class MinionTarget : MonoBehaviour
                 {
                     status = "abducted";
                     destination.target = other.transform;
-                    eAI.goToHostageZone();
+                    eAI.goToHostageZone(gameObject);
                     path.maxSpeed = eAI.GetComponent<AIPath>().maxSpeed + 20.0f;
 
-                    // disable renderer
-                    Renderer[] allChildRenderers = GetComponentsInChildren<Renderer>();
-                    foreach(Renderer R in allChildRenderers ) R.enabled = false;
                     GameObject.Find("MainCharacter").GetComponent<MainControllerScript>().playClip(bobScream);
+                    // disable renderer
+                    gameObject.SetActive(false);
 
                 }
             }
