@@ -143,7 +143,7 @@ public class EnemyAI : MonoBehaviour
         abductedMinion = minion;
         status = "flee";
         if(minion.GetComponent<MinionTarget>().hired) {
-            GameObject alertObject = Instantiate(alert, mainCharacter.position, mainCharacter.rotation, mainCharacter);
+            GameObject alertObject = Instantiate(alert, mainCharacter.position + Vector3.up * 1.1f, mainCharacter.rotation, mainCharacter);
             alertObject.GetComponent<Alert>().CreateAlert(this.transform);
         }
         animator.SetBool("IsAbducting", true);

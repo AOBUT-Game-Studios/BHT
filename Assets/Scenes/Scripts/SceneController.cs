@@ -12,8 +12,8 @@ public class SceneController : MonoBehaviour
     public int maxEnemies = 10;
     public int maxMinions = 8;
     public int maxEnforcers = 2;
-    public int gameTimeMinutes = 5;
-    int gameTimeSeconds;
+    public float gameTimeMinutes = 5.0f;
+    float gameTimeSeconds;
     int currentGameTimeSeconds = 0;
     int currentGameTimeMinutes = 0;
     string UISeconds;
@@ -24,6 +24,7 @@ public class SceneController : MonoBehaviour
     public bool stormOn = true;
     float flickerStart, burnStart;
     float intensityValue = 0.5f;
+    float timeTime;
 
     //Enemy Spawning
     public GameObject enemyPrefab;
@@ -61,7 +62,8 @@ public class SceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameTimeSeconds = gameTimeMinutes * 60;
+        timeTime = 0.0f;
+        gameTimeSeconds = gameTimeMinutes * 60 + Time.time;
         minionSpawnTimeout = minionSpawnInterval;
         hostageZones = new GameObject[4] {
         GameObject.Find("HostageZoneNorth"),
@@ -125,7 +127,8 @@ public class SceneController : MonoBehaviour
     }
     void updateTime()
     {
-        timeInt = Mathf.FloorToInt(Time.time);
+        timeTime += Time.deltaTime;
+        timeInt = Mathf.FloorToInt(timeTime);
         // convert time.time to seconds and minutes
         currentGameTimeSeconds = (timeInt % 60);
         currentGameTimeMinutes = (timeInt % 3600) / 60;
@@ -163,7 +166,15 @@ public class SceneController : MonoBehaviour
         Invoke("lightningStrike", 8.0f);
         Invoke("lightningStrike2", 8.1f);
         Invoke("lightningStrike", 18.0f);
-        Invoke("lightningStrike2", 18.1f);
+        Invoke("lightningStrike2", 18.05f);
+
+        for(int i = 0; i < maxEnemies; i++)
+        {
+            Instantiate(enemyPrefab, hostageZones[Random.Range(0, hostageZones.Length)].transform.position, Quaternion.identity, enemyParent);
+        }
+
+
+
         // end storm
         Invoke("stormEnd", 30);
 
