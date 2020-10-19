@@ -1,6 +1,6 @@
 # About
 
-Bob's Hallween Tycon is a game we created during a game jam. We got 3rd place!
+Bob's Hallween Tycoon is a game we created during a game jam where we got 3rd place!
 
 # Project
 Above is the source code of the project; made in Unity.
